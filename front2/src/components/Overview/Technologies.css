@@ -1,0 +1,15 @@
+.technologies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.technology-badge {
+  background: var(--blue-50);
+  color: var(--blue-600);
+  border: 1px solid var(--border);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+}

@@ -1,0 +1,18 @@
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.stat-grid-compact {
+  margin-bottom: 1.25rem;
+}
+
+.architecture-explanation {
+  margin: 0;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}

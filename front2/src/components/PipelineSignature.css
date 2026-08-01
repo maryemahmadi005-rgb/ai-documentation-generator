@@ -1,0 +1,47 @@
+.pipeline-signature {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.pipeline-signature svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.flow-path {
+  animation: dash-flow 2.4s linear infinite;
+}
+
+.flow-path-alt {
+  animation-duration: 3.1s;
+  animation-direction: reverse;
+  opacity: 0.6;
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -140;
+  }
+}
+
+.signature-node {
+  transition: transform 0.3s var(--ease);
+}
+
+.signature-node-center {
+  animation: node-float 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes node-float {
+  0%, 100% { transform: translate(150px, 40px); }
+  50% { transform: translate(150px, 34px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-path, .signature-node-center {
+    animation: none;
+  }
+}

@@ -1,0 +1,39 @@
+.analysis-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.analysis-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.repository-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.diagrams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 960px) {
+  .analysis-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .repository-grid {
+    grid-template-columns: 1fr;
+  }
+}
