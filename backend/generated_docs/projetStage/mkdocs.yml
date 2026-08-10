@@ -1,0 +1,22 @@
+site_name: projetStage
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- architecture: architecture.md
+- generation: generation.md
+- publisher: publisher.md
+- scanners: scanners.md
+- utils: utils.md
+repo_url: https://github.com/kbalsem/projetStage.git

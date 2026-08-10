@@ -1,0 +1,114 @@
+site_name: helloflask
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- demos: demos.md
+- demos/assets: demos_assets.md
+- demos/assets/static/ckeditor: demos_assets_static_ckeditor.md
+- demos/assets/static/ckeditor/adapters: demos_assets_static_ckeditor_adapters.md
+- demos/assets/static/ckeditor/plugins/a11yhelp/dialogs: demos_assets_static_ckeditor_plugins_a11yhelp_dialogs.md
+- demos/assets/static/ckeditor/plugins/a11yhelp/dialogs/lang: demos_assets_static_ckeditor_plugins_a11yhelp_dialogs_lang.md
+- demos/assets/static/ckeditor/plugins/clipboard/dialogs: demos_assets_static_ckeditor_plugins_clipboard_dialogs.md
+- demos/assets/static/ckeditor/plugins/filebrowser: demos_assets_static_ckeditor_plugins_filebrowser.md
+- demos/assets/static/ckeditor/plugins/filetools: demos_assets_static_ckeditor_plugins_filetools.md
+- demos/assets/static/ckeditor/plugins/filetools/dev: demos_assets_static_ckeditor_plugins_filetools_dev.md
+- demos/assets/static/ckeditor/plugins/filetools/lang: demos_assets_static_ckeditor_plugins_filetools_lang.md
+- demos/assets/static/ckeditor/plugins/image/dialogs: demos_assets_static_ckeditor_plugins_image_dialogs.md
+- demos/assets/static/ckeditor/plugins/link/dialogs: demos_assets_static_ckeditor_plugins_link_dialogs.md
+- demos/assets/static/ckeditor/plugins/markdown: demos_assets_static_ckeditor_plugins_markdown.md
+- demos/assets/static/ckeditor/plugins/markdown/js: demos_assets_static_ckeditor_plugins_markdown_js.md
+- demos/assets/static/ckeditor/plugins/pastefromword/filter: demos_assets_static_ckeditor_plugins_pastefromword_filter.md
+- demos/assets/static/ckeditor/plugins/popup: demos_assets_static_ckeditor_plugins_popup.md
+- demos/assets/static/ckeditor/plugins/scayt: demos_assets_static_ckeditor_plugins_scayt.md
+- demos/assets/static/ckeditor/plugins/scayt/dialogs: demos_assets_static_ckeditor_plugins_scayt_dialogs.md
+- demos/assets/static/ckeditor/plugins/specialchar/dialogs: demos_assets_static_ckeditor_plugins_specialchar_dialogs.md
+- demos/assets/static/ckeditor/plugins/specialchar/dialogs/lang: demos_assets_static_ckeditor_plugins_specialchar_dialogs_lang.md
+- demos/assets/static/ckeditor/plugins/table/dialogs: demos_assets_static_ckeditor_plugins_table_dialogs.md
+- demos/assets/static/ckeditor/plugins/tabletools/dialogs: demos_assets_static_ckeditor_plugins_tabletools_dialogs.md
+- demos/assets/static/ckeditor/plugins/wsc: demos_assets_static_ckeditor_plugins_wsc.md
+- demos/assets/static/ckeditor/plugins/wsc/dialogs: demos_assets_static_ckeditor_plugins_wsc_dialogs.md
+- demos/assets/static/ckeditor/samples/js: demos_assets_static_ckeditor_samples_js.md
+- demos/assets/static/ckeditor/samples/old: demos_assets_static_ckeditor_samples_old.md
+- demos/assets/static/ckeditor/samples/old/assets: demos_assets_static_ckeditor_samples_old_assets.md
+- demos/assets/static/ckeditor/samples/old/dialog/assets: demos_assets_static_ckeditor_samples_old_dialog_assets.md
+- demos/assets/static/ckeditor/samples/old/htmlwriter/assets/outputforflash: demos_assets_static_ckeditor_samples_old_htmlwriter_assets_outputforflash.md
+- demos/assets/static/ckeditor/samples/toolbarconfigurator/font: demos_assets_static_ckeditor_samples_toolbarconfigurator_font.md
+- demos/assets/static/ckeditor/samples/toolbarconfigurator/js: demos_assets_static_ckeditor_samples_toolbarconfigurator_js.md
+- demos/assets/static/ckeditor/skins/moono-lisa: demos_assets_static_ckeditor_skins_moono-lisa.md
+- demos/assets/static/js: demos_assets_static_js.md
+- demos/assets/static/js/plugins/flot: demos_assets_static_js_plugins_flot.md
+- demos/assets/static/js/plugins/morris: demos_assets_static_js_plugins_morris.md
+- demos/cache: demos_cache.md
+- demos/database: demos_database.md
+- demos/email: demos_email.md
+- demos/form: demos_form.md
+- demos/form/static/js: demos_form_static_js.md
+- demos/hello: demos_hello.md
+- demos/http: demos_http.md
+- demos/template: demos_template.md
+- demos/template/static/js: demos_template_static_js.md
+- docs: docs.md
+- docs/book/1: docs_book_1.md
+- docs/book/1/errata: docs_book_1_errata.md
+- docs/book/4: docs_book_4.md
+- docs/book/4/errata: docs_book_4_errata.md
+- examples: examples.md
+- examples/album: examples_album.md
+- examples/assets: examples_assets.md
+- examples/assets/static/ckeditor: examples_assets_static_ckeditor.md
+- examples/assets/static/ckeditor/adapters: examples_assets_static_ckeditor_adapters.md
+- examples/assets/static/ckeditor/plugins/a11yhelp/dialogs: examples_assets_static_ckeditor_plugins_a11yhelp_dialogs.md
+- examples/assets/static/ckeditor/plugins/a11yhelp/dialogs/lang: examples_assets_static_ckeditor_plugins_a11yhelp_dialogs_lang.md
+- examples/assets/static/ckeditor/plugins/clipboard/dialogs: examples_assets_static_ckeditor_plugins_clipboard_dialogs.md
+- examples/assets/static/ckeditor/plugins/filebrowser: examples_assets_static_ckeditor_plugins_filebrowser.md
+- examples/assets/static/ckeditor/plugins/filetools: examples_assets_static_ckeditor_plugins_filetools.md
+- examples/assets/static/ckeditor/plugins/filetools/dev: examples_assets_static_ckeditor_plugins_filetools_dev.md
+- examples/assets/static/ckeditor/plugins/filetools/lang: examples_assets_static_ckeditor_plugins_filetools_lang.md
+- examples/assets/static/ckeditor/plugins/image/dialogs: examples_assets_static_ckeditor_plugins_image_dialogs.md
+- examples/assets/static/ckeditor/plugins/link/dialogs: examples_assets_static_ckeditor_plugins_link_dialogs.md
+- examples/assets/static/ckeditor/plugins/markdown: examples_assets_static_ckeditor_plugins_markdown.md
+- examples/assets/static/ckeditor/plugins/markdown/js: examples_assets_static_ckeditor_plugins_markdown_js.md
+- examples/assets/static/ckeditor/plugins/pastefromword/filter: examples_assets_static_ckeditor_plugins_pastefromword_filter.md
+- examples/assets/static/ckeditor/plugins/popup: examples_assets_static_ckeditor_plugins_popup.md
+- examples/assets/static/ckeditor/plugins/scayt: examples_assets_static_ckeditor_plugins_scayt.md
+- examples/assets/static/ckeditor/plugins/scayt/dialogs: examples_assets_static_ckeditor_plugins_scayt_dialogs.md
+- examples/assets/static/ckeditor/plugins/specialchar/dialogs: examples_assets_static_ckeditor_plugins_specialchar_dialogs.md
+- examples/assets/static/ckeditor/plugins/specialchar/dialogs/lang: examples_assets_static_ckeditor_plugins_specialchar_dialogs_lang.md
+- examples/assets/static/ckeditor/plugins/table/dialogs: examples_assets_static_ckeditor_plugins_table_dialogs.md
+- examples/assets/static/ckeditor/plugins/tabletools/dialogs: examples_assets_static_ckeditor_plugins_tabletools_dialogs.md
+- examples/assets/static/ckeditor/plugins/wsc: examples_assets_static_ckeditor_plugins_wsc.md
+- examples/assets/static/ckeditor/plugins/wsc/dialogs: examples_assets_static_ckeditor_plugins_wsc_dialogs.md
+- examples/assets/static/ckeditor/samples/js: examples_assets_static_ckeditor_samples_js.md
+- examples/assets/static/ckeditor/samples/old: examples_assets_static_ckeditor_samples_old.md
+- examples/assets/static/ckeditor/samples/old/assets: examples_assets_static_ckeditor_samples_old_assets.md
+- examples/assets/static/ckeditor/samples/old/dialog/assets: examples_assets_static_ckeditor_samples_old_dialog_assets.md
+- examples/assets/static/ckeditor/samples/old/htmlwriter/assets/outputforflash: examples_assets_static_ckeditor_samples_old_htmlwriter_assets_outputforflash.md
+- examples/assets/static/ckeditor/samples/toolbarconfigurator/font: examples_assets_static_ckeditor_samples_toolbarconfigurator_font.md
+- examples/assets/static/ckeditor/samples/toolbarconfigurator/js: examples_assets_static_ckeditor_samples_toolbarconfigurator_js.md
+- examples/assets/static/ckeditor/skins/moono-lisa: examples_assets_static_ckeditor_skins_moono-lisa.md
+- examples/assets/static/js: examples_assets_static_js.md
+- examples/assets/static/js/plugins/flot: examples_assets_static_js_plugins_flot.md
+- examples/assets/static/js/plugins/morris: examples_assets_static_js_plugins_morris.md
+- examples/cache: examples_cache.md
+- examples/ch1: examples_ch1.md
+- examples/ch2: examples_ch2.md
+- examples/ch3: examples_ch3.md
+- examples/ch4: examples_ch4.md
+- examples/ch5: examples_ch5.md
+- examples/ckeditor: examples_ckeditor.md
+- examples/longtalk: examples_longtalk.md
+- examples/notebook: examples_notebook.md
+- tests: tests.md
+repo_url: https://github.com/greyli/helloflask.git

@@ -1,0 +1,30 @@
+site_name: ai_doc_gen_jo5fz_xy
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+- docs: docs.md
+- examples/celery/src/task_app: examples_celery_src_task_app.md
+- examples/javascript/js_example: examples_javascript_js_example.md
+- examples/javascript/tests: examples_javascript_tests.md
+- examples/tutorial/flaskr: examples_tutorial_flaskr.md
+- examples/tutorial/tests: examples_tutorial_tests.md
+- src/flask: src_flask.md
+- src/flask/json: src_flask_json.md
+- src/flask/sansio: src_flask_sansio.md
+- tests: tests.md
+- tests/test_apps/blueprintapp: tests_test_apps_blueprintapp.md
+- tests/test_apps/blueprintapp/apps/admin: tests_test_apps_blueprintapp_apps_admin.md
+- tests/test_apps/blueprintapp/apps/frontend: tests_test_apps_blueprintapp_apps_frontend.md
+- tests/test_apps/cliapp: tests_test_apps_cliapp.md
+- tests/type_check: tests_type_check.md
+repo_url: https://github.com/pallets/flask.git

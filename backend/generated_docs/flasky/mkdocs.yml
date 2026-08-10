@@ -1,0 +1,27 @@
+site_name: flasky
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- app: app.md
+- app/api: app_api.md
+- app/auth: app_auth.md
+- app/main: app_main.md
+- app/static: app_static.md
+- app/templates: app_templates.md
+- app/templates/auth: app_templates_auth.md
+- migrations: migrations.md
+- migrations/versions: migrations_versions.md
+- tests: tests.md
+repo_url: https://github.com/miguelgrinberg/flasky.git

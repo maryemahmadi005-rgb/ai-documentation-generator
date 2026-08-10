@@ -1,0 +1,1577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../src_flask_sansio/">
+      
+      
+        <link rel="next" href="../tests_test_apps_blueprintapp/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>tests - ai_doc_gen_n74b_6ap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-tests" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ai_doc_gen_n74b_6ap" class="md-header__button md-logo" aria-label="ai_doc_gen_n74b_6ap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ai_doc_gen_n74b_6ap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pallets/flask.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ai_doc_gen_n74b_6ap" class="md-nav__button md-logo" aria-label="ai_doc_gen_n74b_6ap" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ai_doc_gen_n74b_6ap
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pallets/flask.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagramme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramme de structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparaison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparaison des architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Détection & recommandations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_celery_src_task_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/celery/src/task_app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_javascript_js_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/javascript/js_example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_javascript_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/javascript/tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_tutorial_flaskr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/tutorial/flaskr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_tutorial_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/tutorial/tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src_flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src_flask_json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask/json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src_flask_sansio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask/sansio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conftestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        conftest.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_appctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_appctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_asyncpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_async.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_basicpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_basic.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_blueprintspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_blueprints.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_clipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_cli.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_converterspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_converters.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_helperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_helpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_instance_configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_instance_config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_jsonpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_json.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_json_tagpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_json_tag.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_loggingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_logging.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_regressionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_regression.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_reqctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_reqctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_requestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_request.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_session_interfacepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_session_interface.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_signalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_signals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_subclassingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_subclassing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_templatingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_templating.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_testingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_testing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_user_error_handlerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_user_error_handler.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_viewspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_views.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp_apps_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp/apps/admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp_apps_frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp/apps/frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_cliapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/cliapp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_type_check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/type_check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conftestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        conftest.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_appctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_appctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_asyncpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_async.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_basicpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_basic.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_blueprintspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_blueprints.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_clipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_cli.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_converterspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_converters.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_helperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_helpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_instance_configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_instance_config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_jsonpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_json.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_json_tagpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_json_tag.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_loggingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_logging.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_regressionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_regression.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_reqctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_reqctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_requestpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_request.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_session_interfacepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_session_interface.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_signalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_signals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_subclassingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_subclassing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_templatingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_templating.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_testingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_testing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_user_error_handlerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_user_error_handler.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test_viewspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        test_views.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="module-tests">Module : tests</h1>
+<p>Ce module regroupe 23 fichier(s) source.</p>
+<h2 id="vue-densemble">Vue d'ensemble</h2>
+<ul>
+<li><strong>Classes principales</strong> : AppError, AsyncMethodView, AsyncView, Base, BaseView, BetterIndex, BlueprintError, ChildExceptionRegistered, ChildExceptionUnregistered, ChildView, Config, ContextConverter</li>
+<li><strong>Fonctions principales</strong> : <strong>fspath</strong>, <strong>getattr</strong>, <strong>init</strong>, _async_app, _param_cb, _reset_os_environ, _standard_os_environ, add_x_parachute, after_request_handler, after_request_signal, app, app_ctx, app_forbidden, backend_forbidden, backend_no</li>
+<li><strong>Dépendances</strong> : <strong>future</strong>, _pytest, _pytest.monkeypatch, asyncio, blueprintapp, click, click.testing, codecs, collections.abc, concurrent, config_module_app, config_package_app</li>
+<li><strong>Endpoints API</strong> : /, /<company_id>, /<ctx:name>, /<list:args>, /<self>, /abort, /action, /add, /args_unpack, /array</li>
+</ul>
+<h2 id="detail-des-fichiers">Détail des fichiers</h2>
+<h3 id="conftestpy"><code>conftest.py</code></h3>
+<p>Module Python. Nombre de lignes: 96. Elements detectés: def _standard_os_environ, def _reset_os_environ, def app</p>
+<p><strong>Fonctions</strong> : _standard_os_environ, _reset_os_environ, app, app_ctx, req_ctx, client, test_apps, leak_detector, modules_tmp_path, modules_tmp_path_prefix, site_packages, purge_module, inner
+<strong>Dépendances</strong> : os, sys, pytest, _pytest, flask, flask.globals</p>
+<h3 id="test_appctxpy"><code>test_appctx.py</code></h3>
+<p>Module Python. Nombre de lignes: 194. Elements detectés: def test_basic_url_generation, def index, def test_url_generation_requires_server_name</p>
+<p><strong>Classes</strong> : CustomRequestGlobals
+<strong>Fonctions</strong> : test_basic_url_generation, index, test_url_generation_requires_server_name, test_url_generation_without_context_fails, test_request_context_means_app_context, test_app_context_provides_current_app, test_app_tearing_down, cleanup, test_app_tearing_down_with_previous_exception, test_app_tearing_down_with_handled_exception_by_except_block, test_app_tearing_down_with_handled_exception_by_app_handler, handler, test_app_tearing_down_with_unhandled_exception, test_app_ctx_globals_methods, test_custom_app_ctx_globals_class
+<strong>Dépendances</strong> : sys, pytest, flask, flask.globals, flask.testing
+<strong>API</strong> : /</p>
+<h3 id="test_asyncpy"><code>test_async.py</code></h3>
+<p>Module Python. Nombre de lignes: 104. Elements detectés: class AppError, class BlueprintError, class AsyncView</p>
+<p><strong>Classes</strong> : AppError, BlueprintError, AsyncView, AsyncMethodView
+<strong>Fonctions</strong> : _async_app, test_async_route, test_async_error_handler, test_async_before_after_request, index, bp_index
+<strong>Dépendances</strong> : asyncio, pytest, flask, flask.views
+<strong>API</strong> : /, /home, /error</p>
+<h3 id="test_basicpy"><code>test_basic.py</code></h3>
+<p>Module Python. Nombre de lignes: 1483. Elements detectés: def test_options_work, def index, def test_options_on_multiple_rules</p>
+<p><strong>Classes</strong> : PrefixPathMiddleware, MyException, ForbiddenSubclass, E1, E2, E3, View
+<strong>Fonctions</strong> : test_options_work, index, test_options_on_multiple_rules, index_put, test_method_route, hello, test_method_route_no_methods, test_provide_automatic_options_attr_disable, test_provide_automatic_options_attr_enable, test_provide_automatic_options_arg_disable, test_provide_automatic_options_method_disable, test_request_dispatching, more, test_disallow_string_for_allowed_methods, test_url_mapping
+<strong>Dépendances</strong> : gc, importlib.metadata, re, typing, uuid, weakref, contextlib, datetime, platform, pytest, werkzeug.serving, markupsafe
+<strong>API</strong> : /, /more, /nothing, /clear, /test, /bump, /read, /set, /get, /getitem</p>
+<h3 id="test_blueprintspy"><code>test_blueprints.py</code></h3>
+<p>Module Python. Nombre de lignes: 793. Elements detectés: def test_blueprint_specific_error_handling, def frontend_forbidden, def frontend_no</p>
+<p><strong>Classes</strong> : MyDecoratorException, MyFunctionException, MyBlueprint
+<strong>Fonctions</strong> : test_blueprint_specific_error_handling, frontend_forbidden, frontend_no, backend_forbidden, backend_no, sideend_no, app_forbidden, test_blueprint_specific_user_error_handling, my_decorator_exception_handler, my_function_exception_handler, blue_deco_test, blue_func_test, test_blueprint_app_error_handling, forbidden_handler, bp_forbidden
+<strong>Dépendances</strong> : pytest, jinja2, werkzeug.http, flask, blueprintapp, werkzeug.routing
+<strong>API</strong> : /frontend-no, /backend-no, /what-is-a-sideend, /decorator, /function, /forbidden, /nope, /foo, /bar, /</p>
+<h3 id="test_clipy"><code>test_cli.py</code></h3>
+<p>Module Python. Nombre de lignes: 536. Elements detectés: def runner, def test_cli_name, def test_find_best_app</p>
+<p><strong>Classes</strong> : Module, MockCtx, TestRoutes
+<strong>Fonctions</strong> : runner, test_cli_name, test_find_best_app, create_app, make_app, test_prepare_import, reset_path, test_locate_app, test_locate_app_raises, test_locate_app_suppress_raise, test_get_version, exit, test_scriptinfo, test_app_cli_has_app_context, _param_cb
+<strong>Dépendances</strong> : importlib.metadata, os, platform, ssl, sys, types, functools, pathlib, click, pytest, _pytest.monkeypatch, click.testing</p>
+<h3 id="test_configpy"><code>test_config.py</code></h3>
+<p>Module Python. Nombre de lignes: 193. Elements detectés: def common_object_test, def test_config_from_pyfile, def test_config_from_object</p>
+<p><strong>Classes</strong> : Base, Test, Config, Flask
+<strong>Fonctions</strong> : common_object_test, test_config_from_pyfile, test_config_from_object, test_config_from_file_json, test_config_from_file_toml, test_from_prefixed_env, test_from_prefixed_env_custom_prefix, test_from_prefixed_env_nested, test_config_from_mapping, test_config_from_class, test_config_from_envvar, test_config_from_envvar_missing, test_config_missing, test_config_missing_file, test_custom_config_class
+<strong>Dépendances</strong> : json, os, pytest, flask</p>
+<h3 id="test_converterspy"><code>test_converters.py</code></h3>
+<p>Module Python. Nombre de lignes: 29. Elements detectés: def test_custom_converters, class ListConverter, def to_python</p>
+<p><strong>Classes</strong> : ListConverter, ContextConverter
+<strong>Fonctions</strong> : test_custom_converters, to_python, to_url, index, test_context_available
+<strong>Dépendances</strong> : werkzeug.routing, flask
+<strong>API</strong> : /<list:args>, /<ctx:name></p>
+<h3 id="test_helperspy"><code>test_helpers.py</code></h3>
+<p>Module Python. Nombre de lignes: 273. Elements detectés: class FakePath:, def <strong>init</strong>, def <strong>fspath</strong></p>
+<p><strong>Classes</strong> : FakePath, PyBytesIO, TestSendfile, StaticFileApp, TestUrlFor, MyView, MyAborter, MyFlask
+<strong>Fonctions</strong> : <strong>init</strong>, <strong>fspath</strong>, <strong>getattr</strong>, test_send_file, test_static_file, get_send_file_max_age, test_send_from_directory, test_url_for_with_anchor, index, test_url_for_with_scheme, test_url_for_with_scheme_not_external, test_url_for_with_alternating_schemes, test_url_with_method, get, post
+<strong>Dépendances</strong> : io, os, pytest, werkzeug.exceptions, flask, flask.helpers, flask.views
+<strong>API</strong> : /, /<self></p>
+<h3 id="test_instance_configpy"><code>test_instance_config.py</code></h3>
+<p>Module Python. Nombre de lignes: 80. Elements detectés: def test_explicit_instance_paths, def test_uninstalled_module_paths, def test_uninstalled_package_paths</p>
+<p><strong>Fonctions</strong> : test_explicit_instance_paths, test_uninstalled_module_paths, test_uninstalled_package_paths, test_uninstalled_namespace_paths, create_namespace, test_installed_module_paths, test_installed_package_paths, test_prefix_package_paths
+<strong>Dépendances</strong> : os, pytest, flask, config_module_app, config_package_app, namespace.package2, site_app, installed_package, site_package</p>
+<h3 id="test_jsonpy"><code>test_json.py</code></h3>
+<p>Module Python. Nombre de lignes: 272. Elements detectés: def test_bad_request_debug_message, def post_json, def test_json_bad_requests</p>
+<p><strong>Classes</strong> : FixedOffset, X, CustomProvider, ObjectWithHTML
+<strong>Fonctions</strong> : test_bad_request_debug_message, post_json, test_json_bad_requests, return_json, test_json_custom_mimetypes, test_json_as_unicode, test_json_dump_to_file, test_jsonify_basic_types, test_jsonify_dicts, return_kwargs, return_dict, test_jsonify_arrays, return_args_unpack, return_array, test_jsonify_datetime
+<strong>Dépendances</strong> : datetime, decimal, io, uuid, pytest, werkzeug.http, flask, flask.json.provider, codecs
+<strong>API</strong> : /json, /kw, /dict, /args_unpack, /array, /, /add</p>
+<h3 id="test_json_tagpy"><code>test_json_tag.py</code></h3>
+<p>Module Python. Nombre de lignes: 64. Elements detectés: def test_dump_load_unchanged, def test_duplicate_tag, class TagDict</p>
+<p><strong>Classes</strong> : TagDict, Foo, TagFoo, Tag1, Tag2
+<strong>Fonctions</strong> : test_dump_load_unchanged, test_duplicate_tag, test_custom_tag, <strong>init</strong>, check, to_json, to_python, test_tag_interface, test_tag_order
+<strong>Dépendances</strong> : datetime, uuid, pytest, markupsafe, flask.json.tag</p>
+<h3 id="test_loggingpy"><code>test_logging.py</code></h3>
+<p>Module Python. Nombre de lignes: 69. Elements detectés: def reset_logging, def test_logger, def test_logger_debug</p>
+<p><strong>Fonctions</strong> : reset_logging, test_logger, test_logger_debug, test_existing_handler, test_wsgi_errors_stream, index, test_has_level_handler, test_log_view_exception
+<strong>Dépendances</strong> : logging, sys, io, pytest, flask.logging
+<strong>API</strong> : /</p>
+<h3 id="test_regressionpy"><code>test_regression.py</code></h3>
+<p>Module Python. Nombre de lignes: 22. Elements detectés: def test_aborting, class Foo, def handle_foo</p>
+<p><strong>Classes</strong> : Foo
+<strong>Fonctions</strong> : test_aborting, handle_foo, index, test
+<strong>Dépendances</strong> : flask
+<strong>API</strong> : /, /test</p>
+<h3 id="test_reqctxpy"><code>test_reqctx.py</code></h3>
+<p>Module Python. Nombre de lignes: 190. Elements detectés: def test_teardown_on_pop, def end_of_request, def test_teardown_with_previous_exception</p>
+<p><strong>Classes</strong> : SessionError, FailingSessionInterface, CustomFlask, PathAwareSessionInterface
+<strong>Fonctions</strong> : test_teardown_on_pop, end_of_request, test_teardown_with_previous_exception, test_teardown_with_handled_exception, test_proper_test_request_context, index, sub, test_context_binding, meh, test_context_test, test_manual_context_binding, test_copy_context_thread, work, test_session_error_pops_context, open_session
+<strong>Dépendances</strong> : <strong>future</strong>, collections.abc, warnings, concurrent, pytest, flask, flask.sessions, flask.testing
+<strong>API</strong> : /, /meh, /set, /get, /set_dynamic_cookie, /get_dynamic_cookie</p>
+<h3 id="test_requestpy"><code>test_request.py</code></h3>
+<p>Module Python. Nombre de lignes: 53. Elements detectés: def test_max_content_length, def index, def catcher</p>
+<p><strong>Fonctions</strong> : test_max_content_length, index, catcher, test_limit_config, test_trusted_hosts_config
+<strong>Dépendances</strong> : <strong>future</strong>, flask, flask.testing
+<strong>API</strong> : /</p>
+<h3 id="test_session_interfacepy"><code>test_session_interface.py</code></h3>
+<p>Module Python. Nombre de lignes: 21. Elements detectés: def test_open_session_with_endpoint, class MySessionInterface, def save_session</p>
+<p><strong>Classes</strong> : MySessionInterface
+<strong>Fonctions</strong> : test_open_session_with_endpoint, save_session, open_session, index
+<strong>Dépendances</strong> : flask, flask.globals, flask.sessions
+<strong>API</strong> : /</p>
+<h3 id="test_signalspy"><code>test_signals.py</code></h3>
+<p>Module Python. Nombre de lignes: 139. Elements detectés: def test_template_rendered, def index, def record</p>
+<p><strong>Fonctions</strong> : test_template_rendered, index, record, test_before_render_template, test_request_signals, before_request_signal, after_request_signal, before_request_handler, after_request_handler, test_request_exception_signal, test_appcontext_signals, record_push, record_pop, test_flash_signal, test_appcontext_tearing_down_signal
+<strong>Dépendances</strong> : flask
+<strong>API</strong> : /</p>
+<h3 id="test_subclassingpy"><code>test_subclassing.py</code></h3>
+<p>Module Python. Nombre de lignes: 15. Elements detectés: def test_suppressed_exception_logging, class SuppressedFlask, def log_exception</p>
+<p><strong>Classes</strong> : SuppressedFlask
+<strong>Fonctions</strong> : test_suppressed_exception_logging, log_exception, index
+<strong>Dépendances</strong> : io, flask
+<strong>API</strong> : /</p>
+<h3 id="test_templatingpy"><code>test_templating.py</code></h3>
+<p>Module Python. Nombre de lignes: 387. Elements detectés: def test_context_processing, def context_processor, def index</p>
+<p><strong>Classes</strong> : MyFlask, _TestHandler, CustomEnvironment, CustomFlask
+<strong>Fonctions</strong> : test_context_processing, context_processor, index, test_original_win, test_simple_stream, test_request_less_rendering, test_standard_context, test_escaping, test_no_escaping, test_escaping_without_template_filename, test_macros, test_template_filter, my_reverse, my_reverse_2, my_reverse_3
+<strong>Dépendances</strong> : logging, pytest, werkzeug.serving, jinja2, markupsafe, flask, blueprintapp
+<strong>API</strong> : /</p>
+<h3 id="test_testingpy"><code>test_testing.py</code></h3>
+<p>Module Python. Nombre de lignes: 277. Elements detectés: def test_environ_defaults_from_config, def index, def test_environ_defaults</p>
+<p><strong>Classes</strong> : Namespace, SubRunner, NS
+<strong>Fonctions</strong> : test_environ_defaults_from_config, index, test_environ_defaults, test_environ_base_default, test_environ_base_modified, test_client_open_environ, test_specify_url_scheme, test_path_is_url, test_environbuilder_json_dumps, test_blueprint_with_subdomain, test_redirect_session, get_session, test_session_transactions, test_session_transactions_no_null_sessions, test_session_transactions_keep_context
+<strong>Dépendances</strong> : importlib.metadata, click, pytest, flask, flask.cli, flask.globals, flask.json, flask.testing
+<strong>API</strong> : /, /index, /redirect, /target, /other, /action, /echo, /hello, /<company_id></p>
+<h3 id="test_user_error_handlerpy"><code>test_user_error_handler.py</code></h3>
+<p>Module Python. Nombre de lignes: 215. Elements detectés: def test_error_handler_no_match, class CustomException, def custom_exception_handler</p>
+<p><strong>Classes</strong> : CustomException, ParentException, ChildExceptionUnregistered, ChildExceptionRegistered, ForbiddenSubclassRegistered, ForbiddenSubclassUnregistered, TestGenericHandlers, Custom
+<strong>Fonctions</strong> : test_error_handler_no_match, custom_exception_handler, handle_500, custom_test, key_error, do_abort, test_error_handler_subclass, parent_exception_handler, child_exception_handler, parent_test, unregistered_test, registered_test, test_error_handler_http_subclass, code_exception_handler, subclass_exception_handler
+<strong>Dépendances</strong> : pytest, werkzeug.exceptions, flask
+<strong>API</strong> : /custom, /keyerror, /abort, /parent, /child-unregistered, /child-registered, /forbidden, /forbidden-registered, /forbidden-unregistered, /error</p>
+<h3 id="test_viewspy"><code>test_views.py</code></h3>
+<p>Module Python. Nombre de lignes: 188. Elements detectés: def common_test, def test_basic_view, class Index</p>
+<p><strong>Classes</strong> : Index, Other, BetterIndex, BaseView, ChildView, GetView, DeleteView, GetDeleteView
+<strong>Fonctions</strong> : common_test, test_basic_view, dispatch_request, test_method_based_view, get, post, test_view_patching, test_view_inheritance, delete, test_view_decorators, add_x_parachute, new_function, test_view_provide_automatic_options_attr_disable, test_view_provide_automatic_options_attr_enable, test_provide_automatic_options_method_disable
+<strong>Dépendances</strong> : pytest, werkzeug.http, flask.views, flask.testing</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

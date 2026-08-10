@@ -1,0 +1,25 @@
+site_name: umi-falsk-api
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- apps/models/test: apps_models_test.md
+- apps/models/weiboCaptureRecord: apps_models_weiboCaptureRecord.md
+- apps/models/weiboUser: apps_models_weiboUser.md
+- apps/services/WeiboCaptureRecord: apps_services_WeiboCaptureRecord.md
+- apps/services/test: apps_services_test.md
+- apps/services/testCourse: apps_services_testCourse.md
+- routes: routes.md
+- utils: utils.md
+repo_url: https://github.com/Ans1998/umi-falsk-api.git

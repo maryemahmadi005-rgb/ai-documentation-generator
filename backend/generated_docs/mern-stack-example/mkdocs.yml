@@ -1,0 +1,25 @@
+site_name: mern-stack-example
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+- mern/client: mern_client.md
+- mern/client/cypress/e2e: mern_client_cypress_e2e.md
+- mern/client/cypress/integration: mern_client_cypress_integration.md
+- mern/client/cypress/plugins: mern_client_cypress_plugins.md
+- mern/client/cypress/support: mern_client_cypress_support.md
+- mern/client/src: mern_client_src.md
+- mern/client/src/components: mern_client_src_components.md
+- mern/server: mern_server.md
+- mern/server/db: mern_server_db.md
+- mern/server/routes: mern_server_routes.md
+repo_url: https://github.com/mongodb-developer/mern-stack-example.git

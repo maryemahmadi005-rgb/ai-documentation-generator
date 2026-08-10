@@ -1,0 +1,20 @@
+site_name: flask-rest-setup
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- a-minimal-api: a-minimal-api.md
+- sentiment-clf: sentiment-clf.md
+- to-do-api: to-do-api.md
+repo_url: https://github.com/mnguyenngo/flask-rest-setup.git

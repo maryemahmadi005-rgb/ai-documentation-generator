@@ -1,0 +1,20 @@
+site_name: calculator
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- api/controllers: api_controllers.md
+- public: public.md
+- test: test.md
+repo_url: https://github.com/actionsdemos/calculator.git

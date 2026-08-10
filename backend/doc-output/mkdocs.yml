@@ -1,0 +1,11 @@
+site_name: ai_doc_gen_f234mjf5
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+nav:
+- Accueil: index.md
+- src: src.md

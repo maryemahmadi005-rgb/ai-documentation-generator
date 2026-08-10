@@ -1,0 +1,62 @@
+site_name: ai_doc_gen_awi8ety7
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- .cache/docs: .cache_docs.md
+- architecture: architecture.md
+- generation: generation.md
+- output/Calculatrice-en-java: output_Calculatrice-en-java.md
+- output/Calculatrice-en-java/docs: output_Calculatrice-en-java_docs.md
+- output/Calculatrice-en-java/docs/fichiers/src: output_Calculatrice-en-java_docs_fichiers_src.md
+- output/flask: output_flask.md
+- output/flask/docs: output_flask_docs.md
+- output/flask/docs/fichiers/docs: output_flask_docs_fichiers_docs.md
+- output/flask/docs/fichiers/examples/celery: output_flask_docs_fichiers_examples_celery.md
+- output/flask/docs/fichiers/examples/celery/src/task_app: output_flask_docs_fichiers_examples_celery_src_task_app.md
+- output/flask/docs/fichiers/examples/javascript/js_example: output_flask_docs_fichiers_examples_javascript_js_example.md
+- output/flask/docs/fichiers/examples/tutorial/flaskr: output_flask_docs_fichiers_examples_tutorial_flaskr.md
+- output/flask/docs/fichiers/src/flask: output_flask_docs_fichiers_src_flask.md
+- output/flask/docs/fichiers/src/flask/json: output_flask_docs_fichiers_src_flask_json.md
+- output/flask/docs/fichiers/src/flask/sansio: output_flask_docs_fichiers_src_flask_sansio.md
+- output/flask/docs/fichiers/tests/examples/javascript/tests: output_flask_docs_fichiers_tests_examples_javascript_tests.md
+- output/flask/docs/fichiers/tests/examples/tutorial/tests: output_flask_docs_fichiers_tests_examples_tutorial_tests.md
+- output/flask/docs/fichiers/tests/tests: output_flask_docs_fichiers_tests_tests.md
+- output/flask/docs/fichiers/tests/tests/test_apps/blueprintapp: output_flask_docs_fichiers_tests_tests_test_apps_blueprintapp.md
+- output/flask/docs/fichiers/tests/tests/test_apps/blueprintapp/apps: output_flask_docs_fichiers_tests_tests_test_apps_blueprintapp_apps.md
+- output/flask/docs/fichiers/tests/tests/test_apps/blueprintapp/apps/admin: output_flask_docs_fichiers_tests_tests_test_apps_blueprintapp_apps_admin.md
+- output/flask/docs/fichiers/tests/tests/test_apps/blueprintapp/apps/frontend: output_flask_docs_fichiers_tests_tests_test_apps_blueprintapp_apps_frontend.md
+- output/flask/docs/fichiers/tests/tests/test_apps/cliapp: output_flask_docs_fichiers_tests_tests_test_apps_cliapp.md
+- output/flask/docs/fichiers/tests/tests/test_apps/cliapp/inner1: output_flask_docs_fichiers_tests_tests_test_apps_cliapp_inner1.md
+- output/flask/docs/fichiers/tests/tests/test_apps/cliapp/inner1/inner2: output_flask_docs_fichiers_tests_tests_test_apps_cliapp_inner1_inner2.md
+- output/flask/docs/fichiers/tests/tests/test_apps/helloworld: output_flask_docs_fichiers_tests_tests_test_apps_helloworld.md
+- output/flask/docs/fichiers/tests/tests/test_apps/subdomaintestmodule: output_flask_docs_fichiers_tests_tests_test_apps_subdomaintestmodule.md
+- output/flask/docs/fichiers/tests/tests/type_check: output_flask_docs_fichiers_tests_tests_type_check.md
+- output/pluginbase: output_pluginbase.md
+- output/pluginbase/docs: output_pluginbase_docs.md
+- output/pluginbase/docs/fichiers: output_pluginbase_docs_fichiers.md
+- output/pluginbase/docs/fichiers/docs: output_pluginbase_docs_fichiers_docs.md
+- output/pluginbase/docs/fichiers/docs/_themes: output_pluginbase_docs_fichiers_docs__themes.md
+- output/pluginbase/docs/fichiers/example: output_pluginbase_docs_fichiers_example.md
+- output/pluginbase/docs/fichiers/example/app1/plugins: output_pluginbase_docs_fichiers_example_app1_plugins.md
+- output/pluginbase/docs/fichiers/example/app2/plugins: output_pluginbase_docs_fichiers_example_app2_plugins.md
+- output/pluginbase/docs/fichiers/example/builtin_plugins: output_pluginbase_docs_fichiers_example_builtin_plugins.md
+- output/pluginbase/docs/fichiers/tests/tests: output_pluginbase_docs_fichiers_tests_tests.md
+- output/pluginbase/docs/fichiers/tests/tests/plugins: output_pluginbase_docs_fichiers_tests_tests_plugins.md
+- output/pluginbase/docs/fichiers/tests/tests/plugins/withresources: output_pluginbase_docs_fichiers_tests_tests_plugins_withresources.md
+- publisher: publisher.md
+- scanners: scanners.md
+- static/css: static_css.md
+- templates: templates.md
+- utils: utils.md
+repo_url: https://github.com/kbalsem/projetStage.git

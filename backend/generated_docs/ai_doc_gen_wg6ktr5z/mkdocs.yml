@@ -1,0 +1,15 @@
+site_name: ai_doc_gen_wg6ktr5z
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+repo_url: https://github.com/pallets/flask.git

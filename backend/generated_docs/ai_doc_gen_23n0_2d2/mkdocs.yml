@@ -1,0 +1,21 @@
+site_name: ai_doc_gen_23n0_2d2
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- architecture: architecture.md
+- generation: generation.md
+- publisher: publisher.md
+- scanners: scanners.md
+- utils: utils.md
+repo_url: https://github.com/kbalsem/projetStage.git

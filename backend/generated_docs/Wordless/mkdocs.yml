@@ -1,0 +1,45 @@
+site_name: Wordless
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- doc: doc.md
+- doc/trs/zho_cn: doc_trs_zho_cn.md
+- doc/trs/zho_tw: doc_trs_zho_tw.md
+- tests: tests.md
+- tests/tests_checks: tests_tests_checks.md
+- tests/tests_dialogs: tests_tests_dialogs.md
+- tests/tests_figs: tests_tests_figs.md
+- tests/tests_file_area: tests_tests_file_area.md
+- tests/tests_measures: tests_tests_measures.md
+- tests/tests_nlp: tests_tests_nlp.md
+- tests/tests_nlp/tests_spacy: tests_tests_nlp_tests_spacy.md
+- tests/tests_nlp/tests_stanza: tests_tests_nlp_tests_stanza.md
+- tests/tests_results: tests_tests_results.md
+- tests/tests_settings: tests_tests_settings.md
+- tests/tests_utils: tests_tests_utils.md
+- tests/tests_widgets: tests_tests_widgets.md
+- utils: utils.md
+- wordless: wordless.md
+- wordless/wl_checks: wordless_wl_checks.md
+- wordless/wl_dialogs: wordless_wl_dialogs.md
+- wordless/wl_figs: wordless_wl_figs.md
+- wordless/wl_measures: wordless_wl_measures.md
+- wordless/wl_nlp: wordless_wl_nlp.md
+- wordless/wl_results: wordless_wl_results.md
+- wordless/wl_settings: wordless_wl_settings.md
+- wordless/wl_tagsets: wordless_wl_tagsets.md
+- wordless/wl_utils: wordless_wl_utils.md
+- wordless/wl_widgets: wordless_wl_widgets.md
+repo_url: https://github.com/BLKSerene/Wordless.git

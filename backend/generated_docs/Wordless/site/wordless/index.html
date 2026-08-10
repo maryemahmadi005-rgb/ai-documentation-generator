@@ -1,0 +1,1645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../utils/">
+      
+      
+        <link rel="next" href="../wordless_wl_checks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>wordless - Wordless</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-wordless" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Wordless" class="md-header__button md-logo" aria-label="Wordless" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wordless
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              wordless
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BLKSerene/Wordless.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Wordless" class="md-nav__button md-logo" aria-label="Wordless" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wordless
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BLKSerene/Wordless.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation technique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagramme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramme de structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparaison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparaison architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Détection & recommandations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Racine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    doc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc_trs_zho_cn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    doc/trs/zho_cn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doc_trs_zho_tw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    doc/trs/zho_tw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_dialogs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_figs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_figs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_file_area/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_file_area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_measures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_measures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_nlp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_nlp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_nlp_tests_spacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_nlp/tests_spacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_nlp_tests_stanza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_nlp/tests_stanza
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_tests_widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/tests_widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wl_colligation_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_colligation_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_collocation_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_collocation_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_concordancerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_concordancer.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_concordancer_parallelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_concordancer_parallel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_dependency_parserpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_dependency_parser.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_file_areapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_file_area.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_keyword_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_keyword_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_main.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_ngram_generatorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_ngram_generator.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_profilerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_profiler.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_wordlist_generatorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_wordlist_generator.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_dialogs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_figs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_figs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_measures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_measures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_nlp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_nlp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_tagsets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_tagsets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_utils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordless_wl_widgets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    wordless/wl_widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wl_colligation_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_colligation_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_collocation_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_collocation_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_concordancerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_concordancer.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_concordancer_parallelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_concordancer_parallel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_dependency_parserpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_dependency_parser.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_file_areapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_file_area.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_keyword_extractorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_keyword_extractor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_main.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_ngram_generatorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_ngram_generator.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_profilerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_profiler.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wl_wordlist_generatorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wl_wordlist_generator.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="module-wordless">Module : wordless</h1>
+<p>12 fichier(s), 59 classe(s), 141 fonction(s).</p>
+<h2 id="vue-densemble">Vue d'ensemble</h2>
+<ul>
+<li><strong>Classes principales</strong> : Table_Open_Files, Wl_Dialog_Acks, Wl_Dialog_Check_Updates, Wl_Dialog_Citing, Wl_Dialog_Confirm_Exit, Wl_Dialog_Donating, Wl_Dialog_Need_Help, Wl_Dialog_Open_Corpora, Wl_Dialog_Opening_Nontext_Files, Wl_Loading, Wl_Main, Wl_Table_Colligation_Extractor</li>
+<li><strong>Fonctions principales</strong> : <strong>init</strong>, always_confirm_on_exit_changed, closeEvent, clr_all_tables, clr_table, copy_worksheet, deselect_all, edit_results_filter, edit_results_sample, edit_results_search, exp_all_tables, fade_in, fade_out, fig_settings_changed, file_area_changed</li>
+<li><strong>Dépendances</strong> : PyQt5, bisect, botok, bs4, collections, copy, csv, docx, glob, itertools, matplotlib, matplotlib.pyplot</li>
+</ul>
+<h2 id="detail-des-fichiers">Détail des fichiers</h2>
+<h3 id="wl_colligation_extractorpy"><code>wl_colligation_extractor.py</code></h3>
+<p>Module Python. Nombre de lignes: 1091. Elements detectés: class Wrapper_Colligation_Extractor, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Colligation_Extractor, Wl_Table_Colligation_Extractor, Wl_Worker_Colligation_Extractor, Wl_Worker_Colligation_Extractor_Table, Wl_Worker_Colligation_Extractor_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, generate_table, update_gui_table, generate_fig, update_gui_fig, run
+<strong>Dépendances</strong> : bisect, collections, copy, re, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_nlp, wordless.wl_utils</p>
+<h3 id="wl_collocation_extractorpy"><code>wl_collocation_extractor.py</code></h3>
+<p>Module Python. Nombre de lignes: 1092. Elements detectés: class Wrapper_Collocation_Extractor, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Collocation_Extractor, Wl_Table_Collocation_Extractor, Wl_Worker_Collocation_Extractor, Wl_Worker_Collocation_Extractor_Table, Wl_Worker_Collocation_Extractor_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, generate_table, update_gui_table, generate_fig, update_gui_fig, run
+<strong>Dépendances</strong> : bisect, collections, copy, re, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_nlp, wordless.wl_utils</p>
+<h3 id="wl_concordancerpy"><code>wl_concordancer.py</code></h3>
+<p>Module Python. Nombre de lignes: 914. Elements detectés: class Wrapper_Concordancer, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Concordancer, Wl_Table_Concordancer, Wl_Worker_Concordancer_Table, Wl_Worker_Concordancer_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, zapping_settings_changed, generate_table, update_gui_table, generate_fig, update_gui_fig, run
+<strong>Dépendances</strong> : bisect, copy, traceback, matplotlib, matplotlib.pyplot, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_nlp, wordless.wl_utils</p>
+<h3 id="wl_concordancer_parallelpy"><code>wl_concordancer_parallel.py</code></h3>
+<p>Module Python. Nombre de lignes: 408. Elements detectés: class Wrapper_Concordancer_Parallel, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Concordancer_Parallel, Wl_Table_Concordancer_Parallel, Wl_Worker_Concordancer_Parallel_Table
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, table_settings_changed, generate_table, update_gui_table, run
+<strong>Dépendances</strong> : bisect, copy, itertools, traceback, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_nlp, wordless.wl_utils, wordless.wl_widgets</p>
+<h3 id="wl_dependency_parserpy"><code>wl_dependency_parser.py</code></h3>
+<p>Module Python. Nombre de lignes: 549. Elements detectés: class Wrapper_Dependency_Parser, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Dependency_Parser, Wl_Table_Dependency_Parser, Wl_Worker_Dependency_Parser
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, table_settings_changed, fig_settings_changed, selection_changed_generate_fig, file_changed, generate_table, update_gui_table, generate_fig, run
+<strong>Dépendances</strong> : bisect, copy, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_nlp, wordless.wl_utils, wordless.wl_widgets</p>
+<h3 id="wl_file_areapy"><code>wl_file_area.py</code></h3>
+<p>Module Python. Nombre de lignes: 1010. Elements detectés: class Wrapper_File_Area, def <strong>init</strong>, def get_files</p>
+<p><strong>Classes</strong> : Wrapper_File_Area, Wl_Table_Header_Files, Wl_Table_Files, Wl_Dialog_Open_Corpora, Table_Open_Files, Wl_Dialog_Opening_Nontext_Files, Wl_Worker_Add_Files, Wl_Worker_Open_Files
+<strong>Fonctions</strong> : <strong>init</strong>, get_files, get_file_names, get_selected_files, get_selected_file_names, find_file_by_name, find_files_by_name, paintSection, section_clicked, select_all, deselect_all, invert_selection, item_changed, item_clicked, selection_changed
+<strong>Dépendances</strong> : copy, csv, os, re, traceback, bs4, docx, openpyxl, pptx, pypdf, PyQt5, wordless.wl_checks</p>
+<h3 id="wl_keyword_extractorpy"><code>wl_keyword_extractor.py</code></h3>
+<p>Module Python. Nombre de lignes: 864. Elements detectés: class Wrapper_Keyword_Extractor, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Keyword_Extractor, Wl_Table_Keyword_Extractor, Wl_Worker_Keyword_Extractor, Wl_Worker_Keyword_Extractor_Table, Wl_Worker_Keyword_Extractor_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, file_changed, wl_dialog_missing_corpus_observed, wl_dialog_missing_corpus_ref, wl_status_bar_msg_missing_corpus_observed, wl_status_bar_msg_missing_corpus_ref, generate_table, update_gui_table, generate_fig, update_gui_fig
+<strong>Dépendances</strong> : collections, copy, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_measures, wordless.wl_nlp, wordless.wl_utils, wordless.wl_widgets</p>
+<h3 id="wl_mainpy"><code>wl_main.py</code></h3>
+<p>Module Python. Nombre de lignes: 1197.</p>
+<p><strong>Classes</strong> : Wl_Loading, Wl_Dialog_Confirm_Exit, Wl_Main, Wl_Dialog_Need_Help, Wl_Dialog_Citing, Wl_Dialog_Donating, Wl_Dialog_Acks, Wl_Dialog_Check_Updates
+<strong>Fonctions</strong> : <strong>init</strong>, show_message, fade_in, fade_out, load_settings, always_confirm_on_exit_changed, closeEvent, init_menu, init_central_widget, init_work_area, file_area_changed, work_area_changed, edit_results_search, edit_results_filter, edit_results_sample
+<strong>Dépendances</strong> : multiprocessing, copy, glob, os, pickle, platform, re, subprocess, sys, time, botok, matplotlib</p>
+<h3 id="wl_ngram_generatorpy"><code>wl_ngram_generator.py</code></h3>
+<p>Module Python. Nombre de lignes: 865. Elements detectés: class Wrapper_Ngram_Generator, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Ngram_Generator, Wl_Table_Ngram_Generator, Wl_Worker_Ngram_Generator, Wl_Worker_Ngram_Generator_Table, Wl_Worker_Ngram_Generator_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, search_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, generate_table, update_gui_table, generate_fig, update_gui_fig, get_ngrams_is, run
+<strong>Dépendances</strong> : collections, copy, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_measures, wordless.wl_nlp, wordless.wl_utils, wordless.wl_widgets</p>
+<h3 id="wl_profilerpy"><code>wl_profiler.py</code></h3>
+<p>Module Python. Nombre de lignes: 1519. Elements detectés: def copy_worksheet, class Wrapper_Profiler, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Profiler, Wl_Table_Profiler, Wl_Table_Profiler_Readability, Wl_Table_Profiler_Counts, Wl_Table_Profiler_Lexical_Density_Diversity, Wl_Table_Profiler_Syntactic_Complexity, Wl_Table_Profiler_Lens, Wl_Table_Profiler_Len_Breakdown
+<strong>Fonctions</strong> : copy_worksheet, <strong>init</strong>, load_settings, tabs_changed, item_changed, token_settings_changed, table_settings_changed, file_changed, generate_all_tables, update_gui_table, exp_all_tables, update_gui_exp_all_tables, clr_all_tables, clr_table, generate_table
+<strong>Dépendances</strong> : collections, copy, csv, os, re, traceback, numpy, openpyxl, PyQt5, scipy, wordless.wl_checks, wordless.wl_dialogs</p>
+<h3 id="wl_wordlist_generatorpy"><code>wl_wordlist_generator.py</code></h3>
+<p>Module Python. Nombre de lignes: 664. Elements detectés: class Wrapper_Wordlist_Generator, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Wrapper_Wordlist_Generator, Wl_Table_Wordlist_Generator, Wl_Worker_Wordlist_Generator, Wl_Worker_Wordlist_Generator_Table, Wl_Worker_Wordlist_Generator_Fig
+<strong>Fonctions</strong> : <strong>init</strong>, load_settings, token_settings_changed, generation_settings_changed, table_settings_changed, fig_settings_changed, generate_table, update_gui_table, generate_fig, update_gui_fig, run
+<strong>Dépendances</strong> : collections, copy, traceback, numpy, PyQt5, wordless.wl_checks, wordless.wl_dialogs, wordless.wl_figs, wordless.wl_measures, wordless.wl_nlp, wordless.wl_utils, wordless.wl_widgets</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

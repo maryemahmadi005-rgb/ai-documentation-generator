@@ -1,0 +1,1398 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../examples_tutorial_tests/">
+      
+      
+        <link rel="next" href="../src_flask_json/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>src/flask - ai_doc_gen_jo5fz_xy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-srcflask" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ai_doc_gen_jo5fz_xy" class="md-header__button md-logo" aria-label="ai_doc_gen_jo5fz_xy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ai_doc_gen_jo5fz_xy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              src/flask
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pallets/flask.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ai_doc_gen_jo5fz_xy" class="md-nav__button md-logo" aria-label="ai_doc_gen_jo5fz_xy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ai_doc_gen_jo5fz_xy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pallets/flask.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagramme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramme de structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparaison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparaison des architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Détection & recommandations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_celery_src_task_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/celery/src/task_app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_javascript_js_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/javascript/js_example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_javascript_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/javascript/tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_tutorial_flaskr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/tutorial/flaskr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples_tutorial_tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    examples/tutorial/tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__py" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blueprintspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blueprints.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debughelperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        debughelpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        helpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logging.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sessions.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templatingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        templating.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        testing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrapperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wrappers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src_flask_json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask/json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../src_flask_sansio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    src/flask/sansio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp_apps_admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp/apps/admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_blueprintapp_apps_frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/blueprintapp/apps/frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_test_apps_cliapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/test_apps/cliapp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests_type_check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tests/type_check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vue d'ensemble
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detail-des-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détail des fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Détail des fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__py" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        __init__.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blueprintspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blueprints.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cli.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ctx.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debughelperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        debughelpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#globalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        globals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        helpers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        logging.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sessions.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signalspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        signals.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templatingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        templating.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        testing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typingpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typing.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrapperspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wrappers.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="module-srcflask">Module : src/flask</h1>
+<p>Ce module regroupe 17 fichier(s) source.</p>
+<h2 id="vue-densemble">Vue d'ensemble</h2>
+<ul>
+<li><strong>Classes principales</strong> : AppContext, AppContextProxy, AppGroup, Blueprint, CertParamType, Config, ConfigAttribute, CounterAPI, CustomClient, DebugFilesKeyError, DispatchingJinjaLoader, EnvironBuilder</li>
+<li><strong>Fonctions principales</strong> : <strong>contains</strong>, <strong>delattr</strong>, <strong>enter</strong>, <strong>exit</strong>, <strong>get</strong>, <strong>getattr</strong>, <strong>getitem</strong>, <strong>init</strong>, <strong>init_subclass</strong>, <strong>iter</strong>, <strong>repr</strong>, <strong>set</strong>, <strong>setattr</strong>, <strong>str</strong>, _called_with_wrong_args</li>
+<li><strong>Dépendances</strong> : ., .app, .blueprints, .cli, .config, .ctx, .debughelpers, .globals, .helpers, .json, .json.tag, .sansio.app</li>
+<li><strong>Endpoints API</strong> : /, /stream, /uploads/<path:name></li>
+</ul>
+<h2 id="detail-des-fichiers">Détail des fichiers</h2>
+<h3 id="__init__py"><code>__init__.py</code></h3>
+<p>Module Python. Nombre de lignes: 39.</p>
+<p><strong>Dépendances</strong> : ., .app, .blueprints, .config, .ctx, .globals, .helpers, .json, .signals, .templating, .wrappers</p>
+<h3 id="apppy"><code>app.py</code></h3>
+<p>Module Python. Nombre de lignes: 1325. Elements detectés: def _make_timedelta, def remove_ctx, def wrapper</p>
+<p><strong>Classes</strong> : Flask, CustomClient
+<strong>Fonctions</strong> : _make_timedelta, remove_ctx, wrapper, add_ctx, <strong>init_subclass</strong>, <strong>init</strong>, get_send_file_max_age, send_static_file, open_resource, open_instance_resource, create_jinja_environment, create_url_adapter, raise_routing_exception, update_template_context, make_shell_context
+<strong>Dépendances</strong> : <strong>future</strong>, collections.abc, inspect, os, sys, typing, weakref, datetime, functools, itertools, types, urllib.parse</p>
+<h3 id="blueprintspy"><code>blueprints.py</code></h3>
+<p>Module Python. Nombre de lignes: 102. Elements detectés: class Blueprint, def <strong>init</strong>, def get_send_file_max_age</p>
+<p><strong>Classes</strong> : Blueprint
+<strong>Fonctions</strong> : <strong>init</strong>, get_send_file_max_age, send_static_file, open_resource
+<strong>Dépendances</strong> : <strong>future</strong>, os, typing, datetime, .cli, .globals, .helpers, .sansio.blueprints, .sansio.scaffold, .wrappers</p>
+<h3 id="clipy"><code>cli.py</code></h3>
+<p>Module Python. Nombre de lignes: 899. Elements detectés: class NoAppException, def find_best_app, def _called_with_wrong_args</p>
+<p><strong>Classes</strong> : NoAppException, ScriptInfo, AppGroup, FlaskGroup, CertParamType, SeparatedPathType
+<strong>Fonctions</strong> : find_best_app, _called_with_wrong_args, find_app_by_string, prepare_import, locate_app, get_version, <strong>init</strong>, load_app, with_appcontext, decorator, command, group, _set_app, _set_debug, _env_file_callback
+<strong>Dépendances</strong> : <strong>future</strong>, ast, collections.abc, importlib.metadata, inspect, os, platform, re, sys, traceback, typing, functools</p>
+<h3 id="configpy"><code>config.py</code></h3>
+<p>Module Python. Nombre de lignes: 286. Elements detectés: class ConfigAttribute, def <strong>init</strong>, def <strong>get</strong></p>
+<p><strong>Classes</strong> : ConfigAttribute, Config, and
+<strong>Fonctions</strong> : <strong>init</strong>, <strong>get</strong>, <strong>set</strong>, from_envvar, from_prefixed_env, from_pyfile, from_object, from_file, from_mapping, get_namespace, <strong>repr</strong>
+<strong>Dépendances</strong> : <strong>future</strong>, errno, json, os, types, typing, werkzeug.utils, typing_extensions, .sansio.app, yourapplication, tomllib</p>
+<h3 id="ctxpy"><code>ctx.py</code></h3>
+<p>Module Python. Nombre de lignes: 404. Elements detectés: class _AppCtxGlobals:, def <strong>getattr</strong>, def <strong>setattr</strong></p>
+<p><strong>Classes</strong> : _AppCtxGlobals, AppContext
+<strong>Fonctions</strong> : <strong>getattr</strong>, <strong>setattr</strong>, <strong>delattr</strong>, get, pop, setdefault, <strong>contains</strong>, <strong>iter</strong>, <strong>repr</strong>, after_this_request, index, add_header, copy_current_request_context, do_some_work, wrapper
+<strong>Dépendances</strong> : <strong>future</strong>, contextvars, typing, functools, types, werkzeug.exceptions, werkzeug.routing, ., .globals, .helpers, .signals, typing_extensions
+<strong>API</strong> : /</p>
+<h3 id="debughelperspy"><code>debughelpers.py</code></h3>
+<p>Module Python. Nombre de lignes: 146. Elements detectés: class UnexpectedUnicodeError, class DebugFilesKeyError, def <strong>init</strong></p>
+<p><strong>Classes</strong> : UnexpectedUnicodeError, DebugFilesKeyError, FormDataRoutingRedirect, newcls
+<strong>Fonctions</strong> : <strong>init</strong>, <strong>str</strong>, attach_enctype_error_multidict, <strong>getitem</strong>, _dump_loader_info, explain_template_loading_attempts
+<strong>Dépendances</strong> : <strong>future</strong>, typing, jinja2.loaders, werkzeug.routing, .blueprints, .globals, .sansio.app, .sansio.scaffold, .wrappers</p>
+<h3 id="globalspy"><code>globals.py</code></h3>
+<p>Module Python. Nombre de lignes: 58. Elements detectés: class ProxyMixin, def _get_current_object, class FlaskProxy</p>
+<p><strong>Classes</strong> : ProxyMixin, FlaskProxy, AppContextProxy, _AppCtxGlobalsProxy, RequestProxy, SessionMixinProxy
+<strong>Fonctions</strong> : _get_current_object, <strong>getattr</strong>
+<strong>Dépendances</strong> : <strong>future</strong>, typing, contextvars, werkzeug.local, .app, .ctx, .sessions, .wrappers, warnings</p>
+<h3 id="helperspy"><code>helpers.py</code></h3>
+<p>Module Python. Nombre de lignes: 534. Elements detectés: def get_debug_flag, def get_load_dotenv, def stream_with_context</p>
+<p><strong>Classes</strong> : _CollectErrors
+<strong>Fonctions</strong> : get_debug_flag, get_load_dotenv, stream_with_context, streamed_response, generate, decorator, generator, make_response, index, url_for, redirect, abort, get_template_attribute, flash, get_flashed_messages
+<strong>Dépendances</strong> : <strong>future</strong>, importlib.util, os, sys, typing, datetime, functools, types, werkzeug.utils, werkzeug.exceptions, werkzeug.wrappers, .globals
+<strong>API</strong> : /stream, /uploads/<path:name></p>
+<h3 id="loggingpy"><code>logging.py</code></h3>
+<p>Module Python. Nombre de lignes: 55. Elements detectés: def wsgi_errors_stream, def has_level_handler, def create_logger</p>
+<p><strong>Fonctions</strong> : wsgi_errors_stream, has_level_handler, create_logger
+<strong>Dépendances</strong> : <strong>future</strong>, logging, sys, typing, werkzeug.local, .globals, .sansio.app</p>
+<h3 id="sessionspy"><code>sessions.py</code></h3>
+<p>Module Python. Nombre de lignes: 310. Elements detectés: class SessionMixin, def permanent, def permanent</p>
+<p><strong>Classes</strong> : SessionMixin, SecureCookieSession, NullSession, SessionInterface, Session, SecureCookieSessionInterface
+<strong>Fonctions</strong> : permanent, <strong>init</strong>, on_update, _fail, make_null_session, is_null_session, get_cookie_name, get_cookie_domain, get_cookie_path, get_cookie_httponly, get_cookie_secure, get_cookie_samesite, get_cookie_partitioned, get_expiration_time, should_set_cookie
+<strong>Dépendances</strong> : <strong>future</strong>, collections.abc, hashlib, typing, datetime, itsdangerous, werkzeug.datastructures, .json.tag, typing_extensions, .app, .wrappers</p>
+<h3 id="signalspy"><code>signals.py</code></h3>
+<p>Module Python. Nombre de lignes: 14.</p>
+<p><strong>Dépendances</strong> : <strong>future</strong>, blinker</p>
+<h3 id="templatingpy"><code>templating.py</code></h3>
+<p>Module Python. Nombre de lignes: 166. Elements detectés: def _default_template_ctx_processor, class Environment, def <strong>init</strong></p>
+<p><strong>Classes</strong> : Environment, DispatchingJinjaLoader
+<strong>Fonctions</strong> : _default_template_ctx_processor, <strong>init</strong>, get_source, _get_source_explained, _get_source_fast, _iter_loaders, list_templates, _render, render_template, render_template_string, _stream, generate, stream_template, stream_template_string
+<strong>Dépendances</strong> : <strong>future</strong>, typing, jinja2, .ctx, .globals, .helpers, .signals, .sansio.app, .sansio.scaffold, .debughelpers</p>
+<h3 id="testingpy"><code>testing.py</code></h3>
+<p>Module Python. Nombre de lignes: 237. Elements detectés: class EnvironBuilder, def <strong>init</strong>, def json_dumps</p>
+<p><strong>Classes</strong> : EnvironBuilder, FlaskClient, FlaskCliRunner
+<strong>Fonctions</strong> : <strong>init</strong>, json_dumps, _get_werkzeug_version, session_transaction, _copy_environ, _request_from_builder_args, open, <strong>enter</strong>, <strong>exit</strong>, invoke
+<strong>Dépendances</strong> : <strong>future</strong>, importlib.metadata, typing, contextlib, copy, types, urllib.parse, werkzeug.test, click.testing, werkzeug.wrappers, .cli, .sessions</p>
+<h3 id="typingpy"><code>typing.py</code></h3>
+<p>Module Python. Nombre de lignes: 77.</p>
+<p><strong>Dépendances</strong> : <strong>future</strong>, collections.abc, typing, _typeshed.wsgi, werkzeug.datastructures, werkzeug.sansio.response</p>
+<h3 id="viewspy"><code>views.py</code></h3>
+<p>Module Python. Nombre de lignes: 146. Elements detectés: class View:, class Hello, def dispatch_request</p>
+<p><strong>Classes</strong> : View, Hello, MethodView, CounterAPI
+<strong>Fonctions</strong> : dispatch_request, as_view, view, get, post, <strong>init_subclass</strong>
+<strong>Dépendances</strong> : <strong>future</strong>, typing, ., .globals</p>
+<h3 id="wrapperspy"><code>wrappers.py</code></h3>
+<p>Module Python. Nombre de lignes: 194. Elements detectés: class Request, def max_content_length, def max_content_length</p>
+<p><strong>Classes</strong> : Request, Response
+<strong>Fonctions</strong> : max_content_length, max_form_memory_size, max_form_parts, endpoint, blueprint, blueprints, _load_form_data, on_json_loading_failed, max_cookie_size
+<strong>Dépendances</strong> : <strong>future</strong>, typing, werkzeug.exceptions, werkzeug.wrappers, ., .globals, .helpers, werkzeug.routing, .debughelpers</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,28 @@
+site_name: realworld
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Documentation technique: documentation.md
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+- src: src.md
+- src/lib: src_lib.md
+- src/routes: src_routes.md
+- src/routes/article/[slug]: src_routes_article_[slug].md
+- src/routes/editor: src_routes_editor.md
+- src/routes/editor/[slug]: src_routes_editor_[slug].md
+- src/routes/login: src_routes_login.md
+- src/routes/profile/@[user]: src_routes_profile_@[user].md
+- src/routes/register: src_routes_register.md
+- src/routes/settings: src_routes_settings.md
+- static: static.md
+repo_url: https://github.com/sveltejs/realworld.git

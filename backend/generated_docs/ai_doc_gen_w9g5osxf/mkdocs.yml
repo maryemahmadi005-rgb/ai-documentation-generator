@@ -1,0 +1,16 @@
+site_name: ai_doc_gen_w9g5osxf
+docs_dir: docs
+theme:
+  name: material
+markdown_extensions:
+- tables
+- admonition
+- toc
+- pymdownx.superfences
+nav:
+- Architecture: architecture.md
+- Diagramme de structure: diagramme.md
+- Comparaison des architectures: comparaison.md
+- Détection & recommandations: detection.md
+- Racine: root.md
+repo_url: https://github.com/kbalsem/projetStage.git
