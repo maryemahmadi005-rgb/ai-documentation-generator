@@ -3,15 +3,14 @@ import "./Sidebar.css";
 
 const ITEMS = [
   { id: "overview", label: "Overview" },
+  { id: "statistics", label: "Statistics" },
   { id: "architecture", label: "Architecture" },
-  { id: "diagrams", label: "Diagrams" },
   { id: "repository", label: "Repository" },
   { id: "modules", label: "Modules" },
   { id: "technologies", label: "Technologies" },
   { id: "git-info", label: "Git Information" },
   { id: "documentation", label: "Documentation" },
   { id: "readme", label: "README" },
-  { id: "ai-summary", label: "AI Summary" },
   { id: "download", label: "Download" },
 ];
 

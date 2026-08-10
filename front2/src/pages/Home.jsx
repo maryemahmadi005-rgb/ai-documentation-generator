@@ -45,6 +45,7 @@ function Home() {
 
     setAnalyzing(true);
     try {
+      console.log("🚀 BEFORE POST PROJECT");
       // L'API exige user_id, name ET github_url sur /projects. On crée donc
       // d'abord le projet pour récupérer son id, avant d'appeler /analyze.
       const projectResponse = await api.post("/projects", {
@@ -52,6 +53,8 @@ function Home() {
         name: extractProjectName(githubUrl),
         github_url: githubUrl.trim(),
       });
+      console.log("✅ AFTER POST PROJECT", projectResponse);
+
 
       const projectData = projectResponse.data.project || projectResponse.data;
       const projectId = projectData.id ?? projectData.project_id;

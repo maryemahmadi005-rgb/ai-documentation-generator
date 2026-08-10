@@ -16,6 +16,7 @@ import GitInfo from "../components/Overview/GitInfo.jsx";
 import Modules from "../components/Modules/Modules.jsx";
 import RepoTree from "../components/Repository/RepoTree.jsx";
 import FileViewer from "../components/Repository/FileViewer.jsx";
+import Statistics from "../components/Statistics.jsx";
 import MarkdownViewer from "../components/Documentation/MarkdownViewer.jsx";
 import DownloadButtons from "../components/Documentation/DownloadButtons.jsx";
 import AISummary from "../components/Summary/AISummary.jsx";
@@ -135,15 +136,24 @@ function AnalysisResult() {
   }
 
   const projectName = analysis.project_name || analysis.name || "Untitled project";
+  console.log("===== ANALYSIS FULL OBJECT =====");
+  console.log(analysis);
+  console.log("DETECTED ARCH:", analysis.detected_architecture);
+  console.log("ARCH CONF:", analysis.architecture_confidence); 
+
+ console.log("ARCH SCORE:", analysis.architecture_score);
+ console.log("================================");
+  
   const repoUrl = analysis.github_url || analysis.repo_url || analysis.git_info?.repo_url || "-";
   // detected_architecture est le nom de champ réel renvoyé par l'API
   // (GET /api/analyses/:id comme POST /api/analyze). Les autres clés
   // du fallback restent au cas où la forme de la réponse évolue.
   const architectureName =
-    analysis.detected_architecture ||
-    analysis.architecture?.type ||
-    analysis.architecture ||
-    "Not detected";
+  analysis.detected_architecture ||
+  analysis.architecture?.detected_architecture ||
+  analysis.architecture_analysis?.detected_architecture ||
+  analysis.analysis?.detected_architecture ||
+  "Unknown";
   const confidence =
     analysis.architecture_confidence ?? analysis.confidence ?? analysis.architecture?.confidence ?? null;
   const score = analysis.architecture_score ?? analysis.score ?? analysis.architecture?.score ?? null;
@@ -151,6 +161,7 @@ function AnalysisResult() {
   const filesAnalyzed = analysis.files_count ?? analysis.files_analyzed ?? analysis.stats?.files ?? null;
   const directories = analysis.directories_count ?? analysis.stats?.directories ?? null;
   const technologies = Array.isArray(analysis.technologies) ? analysis.technologies : [];
+  const statistics = analysis.statistics || analysis.project_statistics || analysis.stats || null;
   const status = analysis.status || "unknown";
 
   const architectureExplanation = analysis.architecture?.explanation || analysis.architecture_explanation || "No explanation provided by the analysis.";
@@ -181,21 +192,39 @@ function AnalysisResult() {
 
   const filesByPath = indexFilesByPath(analysis.files);
   const repoNodes = repositoryTreeToNodes(
-    analysis.repository_tree,
+    analysis.repository_tree || analysis.structure,
     filesByPath
   );
   // Un seul document est généré par analyse (analysis.document, format markdown) :
   // README et Documentation en sont donc la même source de contenu.
-  const readmeContent = analysis.readme_content || "";
+  const readmeContent = (analysis.readme_content || "").replace(/^#\s+.+\n+/, "");
   const documentationContent =
-    analysis.documentation_content || analysis.documentation?.content || "";
+    (analysis.documentation_content || analysis.documentation?.content || "").replace(/^#\s+.+\n+/, "");
   // file_path est un chemin serveur (pas forcément une URL ouvrable directement
   // dans le navigateur) : à adapter si le backend expose une vraie route de
   // téléchargement/consultation statique pour ce fichier.
-  const documentationUrl =
-    analysis.documentation_url || analysis.documentation?.url || null;
+const getDocumentationUrl = (url) => {
+  if (!url) return null;
+
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+
+  return `http://127.0.0.1:5000${url}`;
+};
+
+const documentationUrl =
+  getDocumentationUrl(analysis.site_url) ||
+  getDocumentationUrl(analysis.documentation_url) ||
+  getDocumentationUrl(analysis.documentation?.url) ||
+  getDocumentationUrl(analysis.document?.site_url);
+
+console.log("MKDOCS URL:", documentationUrl);
 
   const aiSummary = analysis.ai_summary || analysis.summary || "";
+  const gitInfo = analysis.git_info || {
+  commit_hash: analysis.commit_hash,
+};
 
   return (
     <div className="page-container">
@@ -217,7 +246,6 @@ function AnalysisResult() {
               {[
                 { label: "Project Name", value: projectName, icon: FolderGit2 },
                  { label: "Files analyzed", value: filesAnalyzed ?? "-", icon: FileCode2 },
-                { label: "Directories", value: directories ?? "-", icon: FolderTree },
                 {
                   label: "Status",
                   value: status,
@@ -235,6 +263,10 @@ function AnalysisResult() {
             </motion.div>
           </SectionCard>
 
+          <SectionCard id="statistics" title="Statistics" description="High-level metrics about the analyzed project." icon={FileCode2}>
+            <Statistics statistics={statistics} />
+          </SectionCard>
+
           <SectionCard id="architecture" title="Architecture" description="Detected architecture pattern and reasoning." icon={Layers}>
             <ArchitectureCard
               name={architectureName}
@@ -243,15 +275,6 @@ function AnalysisResult() {
             />
           </SectionCard>
 
-          {extraDiagrams.length > 0 && (
-            <SectionCard id="diagrams" title="Diagrams" description="Additional diagrams generated for this analysis." icon={Network}>
-              <div className="diagrams-grid">
-                {extraDiagrams.map((diagram) => (
-                  <MermaidDiagram key={diagram.key} code={diagram.code} title={diagram.title} />
-                ))}
-              </div>
-            </SectionCard>
-          )}
 
           <SectionCard id="repository" title="Repository" description="Project structure detected during analysis." icon={FolderTree}>
             <div className="repository-grid">
@@ -270,17 +293,19 @@ function AnalysisResult() {
             <Technologies technologies={technologies} />
           </SectionCard>
 
-          {analysis.git_info && Object.values(analysis.git_info).some(Boolean) && (
-            <SectionCard 
-            id="git-info" 
-            title="Git Information" 
-            description="Repository metadata at the time of analysis."
-            icon={GitBranch}
-            >
-              <GitInfo metadata={analysis.git_info} />
-              </SectionCard>
-            )}
-
+        {analysis.git_info &&
+        Object.values(analysis.git_info).filter(
+          value => value !== null && value !== "" && value !== undefined
+        ).length > 0 && (
+        <SectionCard 
+        id="git-info" 
+        title="Git Information" 
+        description="Repository metadata at the time of analysis."
+        icon={GitBranch}
+        >
+          <GitInfo metadata={analysis.git_info} />
+          </SectionCard>
+        )}
           <SectionCard id="documentation" title="Documentation" description="Generated technical documentation." icon={FileText}>
             <MarkdownViewer content={documentationContent} />
           </SectionCard>
@@ -289,10 +314,7 @@ function AnalysisResult() {
             <MarkdownViewer content={readmeContent} />
           </SectionCard>
 
-          <SectionCard id="ai-summary" title="AI Summary" description="Natural-language summary produced by the AI model." icon={Sparkles}>
-            <AISummary summary={aiSummary} />
-          </SectionCard>
-
+        
           <SectionCard id="download" title="Download" description="Export or open the generated documentation." icon={Download}>
             <DownloadButtons
               projectName={projectName}

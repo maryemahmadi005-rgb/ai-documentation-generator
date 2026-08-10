@@ -1,14 +1,23 @@
-import { GitBranch, GitCommit, User, Hash } from "lucide-react";
+import { GitBranch, GitCommit, User, Hash, Link as LinkIcon } from "lucide-react";
 import EmptyState from "../Common/EmptyState.jsx";
 import "./GitInfo.css";
 
 /**
- * Carte "Git Information", à partir de `analysis.metadata` (renvoyé
- * tel quel par le pipeline backend : is_git_repo, branch,
- * last_commit_hash, last_commit_author, total_commits).
+ * Carte "Git Information", à partir de `analysis.metadata`
+ * (is_git_repo, branch, last_commit_hash,
+ * last_commit_author, total_commits, remotes).
  */
 function GitInfo({ metadata }) {
-  if (!metadata || !metadata.is_git_repo) {
+  if (
+    !metadata ||
+    (
+      !metadata.branch &&
+      !metadata.last_commit_hash &&
+      !metadata.last_commit_author &&
+      !metadata.total_commits &&
+      !metadata.remotes?.length
+    )
+  ) {
     return (
       <EmptyState
         title="No Git information"
@@ -18,10 +27,31 @@ function GitInfo({ metadata }) {
   }
 
   const rows = [
-    { icon: GitBranch, label: "Branch", value: metadata.branch },
-    { icon: Hash, label: "Commit", value: metadata.last_commit_hash },
-    { icon: User, label: "Author", value: metadata.last_commit_author },
-    { icon: GitCommit, label: "Commits", value: metadata.total_commits },
+    {
+      icon: GitBranch,
+      label: "Branch",
+      value: metadata.branch,
+    },
+    {
+      icon: Hash,
+      label: "Commit",
+      value: metadata.last_commit_hash,
+    },
+    {
+      icon: User,
+      label: "Author",
+      value: metadata.last_commit_author,
+    },
+    {
+      icon: GitCommit,
+      label: "Commits",
+      value: metadata.total_commits,
+    },
+    {
+      icon: LinkIcon,
+      label: "Remote",
+      value: metadata.remotes?.[0],
+    },
   ];
 
   return (
@@ -31,8 +61,14 @@ function GitInfo({ metadata }) {
           <span className="git-info-icon">
             <Icon size={15} />
           </span>
-          <span className="git-info-label">{label}</span>
-          <span className="git-info-value">{value ?? "-"}</span>
+
+          <span className="git-info-label">
+            {label}
+          </span>
+
+          <span className="git-info-value">
+            {value ?? "-"}
+          </span>
         </div>
       ))}
     </div>

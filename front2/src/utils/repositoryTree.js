@@ -45,40 +45,114 @@ export function indexFilesByPath(files) {
  * @param {string} basePath — usage interne (récursion)
  */
 export function repositoryTreeToNodes(tree, filesByPath = {}, basePath = "") {
-  if (!tree || typeof tree !== "object") {
+  if (!tree) {
     return [];
   }
 
-  const folderNodes = Object.entries(tree.dirs || {})
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([folderName, child]) => {
-      const path = basePath ? `${basePath}/${folderName}` : folderName;
+  /*
+   New backend format:
+   [
+     {
+       name: "app",
+       type: "folder",
+       children: [...]
+     }
+   ]
+  */
+  if (Array.isArray(tree)) {
+    return tree.map((node) => {
+      const path = basePath
+      ? `${basePath}/${node.name}`
+      : node.name;
 
-      return {
-        name: folderName,
-        type: "folder",
-        path,
-        children: repositoryTreeToNodes(child, filesByPath, path),
-      };
-    });
+    const isFile = node.type === "file";
 
-  const fileNodes = (tree.files || [])
-    .slice()
-    .sort((a, b) => a.localeCompare(b))
-    .map((fileName) => {
-      const path = basePath ? `${basePath}/${fileName}` : fileName;
-      const info = filesByPath[path];
+    return {
+      name: node.name,
+      type: isFile
+        ? "file"
+        : node.type === "directory"
+          ? "folder"
+          : "folder",
+      path,
 
-      return {
-        name: fileName,
-        type: "file",
-        path,
-        summary: info?.summary,
-        line_count: info?.line_count,
-        classes: info?.classes,
-        functions: info?.functions,
-      };
-    });
+      ...(isFile
+        ? {
+            summary: filesByPath[path]?.summary,
+            line_count: filesByPath[path]?.line_count,
+            classes: filesByPath[path]?.classes,
+            functions: filesByPath[path]?.functions,
+          }
+        : {
+            children: repositoryTreeToNodes(
+              node.children || [],
+              filesByPath,
+              path
+            ),
+          }),
+    };
+  });
+}
 
-  return [...folderNodes, ...fileNodes];
+
+  /*
+   Old backend format:
+   {
+     files: [],
+     dirs: {}
+   }
+  */
+  if (typeof tree === "object") {
+
+    const folderNodes = Object.entries(tree.dirs || {})
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([folderName, child]) => {
+
+        const path = basePath
+          ? `${basePath}/${folderName}`
+          : folderName;
+
+        return {
+          name: folderName,
+          type: "folder",
+          path,
+          children: repositoryTreeToNodes(
+            child,
+            filesByPath,
+            path
+          ),
+        };
+      });
+
+
+    const fileNodes = (tree.files || [])
+      .sort()
+      .map((fileName) => {
+
+        const path = basePath
+          ? `${basePath}/${fileName}`
+          : fileName;
+
+        const info = filesByPath[path];
+
+        return {
+          name: fileName,
+          type: "file",
+          path,
+          summary: info?.summary,
+          line_count: info?.line_count,
+          classes: info?.classes,
+          functions: info?.functions,
+        };
+      });
+
+
+    return [
+      ...folderNodes,
+      ...fileNodes
+    ];
+  }
+
+
+  return [];
 }
