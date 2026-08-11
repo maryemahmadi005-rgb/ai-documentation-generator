@@ -1,12 +1,12 @@
 # Project Documentation
 
-Analyser et comprendre le code pour identifier les problèmes et améliorer la qualité du projet
+Créer un système d'analyse de données pour les applications web
 
 ---
 
 ## Fonctionnement général
 
-Détection d'architecture, identification de modules importants, analyse de flux de données et points d'entrée
+Analyser le code source des applications web et générer une documentation technique
 
 ---
 
@@ -18,77 +18,137 @@ Détection d'architecture, identification de modules importants, analyse de flux
 
 ## Technologies utilisées
 
-- Python
 - JavaScript
+- Python
+- Flask
+- React
+- Vite
+- npm
+- pip
 
 ---
 
 ## Modules principaux
 
-### module1
-
-**Fichier :** `/app/modules/module1.py`
-
-**Rôle :**
-
-Gestion des données
-
-
-
-
-**Routes exposées :**
-
-- `/route1`
-- `/route2`
-
-**Blueprint :** `/app/blueprints/module1.py`
-
-### module2
-
-**Fichier :** `/app/modules/module2.py`
-
-**Rôle :**
-
-Gestion des requêtes
-
-
-
-
-**Routes exposées :**
-
-- `/route3`
-- `/route4`
-
-**Blueprint :** `/app/blueprints/module2.py`
-
+Aucun module principal détecté.
 
 ---
 
 ## Flux de données
 
-
+Flux de données entre les modules, interactions entre les classes et les fonctions, flux de données entre les services et les repositories
 
 ---
 
 ## Points d'entrée
 
-- {'name': 'point1', 'description': "Point d'entrée pour le module 1"}
-- {'name': 'point2', 'description': "Point d'entrée pour le module 2"}
+- backend/app/__init__.py
+- backend/app/routes/analysis_routes.py
+- backend/app/routes/analyze_routes.py
+- backend/app/routes/auth_routes.py
+- backend/app/routes/document_routes.py
+- backend/app/routes/project_routes.py
+- backend/app/routes/user_routes.py
+- backend/run.py
+- backend/services/analyzers/architecture_analyzer.py
+- backend/services/documentation_service.py
+- backend/services/test_doc_content_separation.py
+- backend/services/test_documentation_enrichment.py
+- backend/test_connection.py
+- front2/src/App.jsx
+- front2/src/main.jsx
 
 ---
 
+## Endpoints API
+
+
+- /api/health
+
+
+- /api/analyses/<int:analysis_id>
+
+
+- /api/analyses
+
+
+- /api/analyses/<int:analysis_id>
+
+
+- /history
+
+
+- /
+
+
+- /login
+
+
+- /
+
+
+- /
+
+
+- /<int:id>
+
+
+- /analysis/<int:analysis_id>
+
+
+- /<int:id>
+
+
+- /<int:id>/download
+
+
+- /<int:id>/site
+
+
+- /<int:id>/site/
+
+
+- /<int:id>/site/<path:filename>
+
+
+- /<int:id>/<path:filename>/
+
+
+- /<int:id>/<path:filename>
+
+
+- /
+
+
+- /
+
+
+- /<int:id>
+
+
+- /<int:id>
+
+
+- /
+
+
+- /
+
+
+- /<int:id>
+
+
+- /<int:id>
+
+
 ## Dépendances importantes
 
-### dep1
-
-
-### dep2
-
-
+- npm
+- pip
 
 ---
 
 ## Recommandations
 
-- {'name': 'recom1', 'description': 'Améliorer la performance du module 1'}
-- {'name': 'recom2', 'description': 'Optimiser les routes du module 2'}
+- {'type': 'improvement', 'description': 'Améliorer la documentation technique pour rendre le système plus accessible aux utilisateurs non techniques'}
+- {'type': 'optimization', 'description': 'Optimiser les performances du système en réduisant les temps de chargement'}
