@@ -5021,3 +5021,5 @@ Generate the project description from:
         raise DocumentationPipelineError(
             str(e)
         )
+def health_check():
+    return {"status": "ok"}
