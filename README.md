@@ -1,12 +1,12 @@
 # Project Documentation
 
-Générer des documents d'analyse automatiquement à partir de données provenant de sources externes
+Générer des documents d'analyse pour les projets
 
 ---
 
 ## Fonctionnement général
 
-Le flux réel fonctionne comme suit : une requête HTTP est envoyée vers l'endpoint API /api/analyze, qui appelle la méthode create_analysis() du service analysis_service.py. Ce dernier utilise les données fournies par le frontend pour créer un document d'analyse et le stocke dans la base de données. Le résultat est ensuite rendu à travers l'endpoint API /api/documents.
+Le flux réel fonctionne comme suit : une requête HTTP est envoyée à l'endpoint /api/analyze, qui appelle le service AnalyserService pour traiter la demande. Ce service utilise ensuite le module CodeAnalyzer pour analyser le code source du projet et générer un document d'analyse.
 
 ---
 
@@ -22,41 +22,33 @@ Le flux réel fonctionne comme suit : une requête HTTP est envoyée vers l'endp
 
 ## Modules principaux
 
-### backend/app/__init__.py
-**Fichier :** `backend/app/__init__.py`
+### CodeAnalyzer
+**Fichier :** `backend/services/analyzers/code_analyzer.py`
 
-**Rôle :** Rendu du service Flask et initialisation des extensions
+**Rôle :** Gère les appels HTTP vers Ollama et la validation du JSON retourné pour analyser le code source des projets.
 
-**Classes principales :** `Flask`, `Config`
-**Dépendances internes :** `flask`, `app.config`
-### backend/app/routes/analyze_routes.py
-**Fichier :** `backend/app/routes/analyze_routes.py`
-
-**Rôle :** Gestion des appels HTTP vers l'endpoint API /api/analyze
-
-**Classes principales :** `Blueprint`, `request`, `jsonify`
-**Dépendances internes :** `flask`, `app.routes`
-**Routes exposées :** `/api/analyze`
-### backend/services/analysis_service.py
+**Classes principales :** `CodeAnalyzer`, `Analysis`
+**Dépendances internes :** `Flask`, `requests`, `Ollama`
+### AnalyserService
 **Fichier :** `backend/services/analysis_service.py`
 
-**Rôle :** Création et mise à jour des documents d'analyse
+**Rôle :** Traite les demandes d'analyse et appelle le module CodeAnalyzer.
 
-**Classes principales :** `create_analysis`, `update_analysis_status`
-**Dépendances internes :** `services.document_service`, `app.routes`
-### backend/services/document_service.py
+**Classes principales :** `Analysis`, `ProjectNotFoundError`
+**Dépendances internes :** `Flask`, `requests`
+### DocumentService
 **Fichier :** `backend/services/document_service.py`
 
-**Rôle :** Création et stockage des documents d'analyse
+**Rôle :** Gère la génération des documents d'analyse.
 
-**Classes principales :** `create_document`, `generate_documentation`
-**Routes exposées :** `/api/documents`
+**Classes principales :** `Document`, `DocumentationPipelineError`
+**Dépendances internes :** `Flask`, `requests`
 
 ---
 
 ## Flux de données
 
-Flux non détecté.
+Les données de code source sont envoyées à l'endpoint /api/analyze, qui appelle le service AnalyserService pour traiter la demande. Ce service utilise ensuite le module CodeAnalyzer pour analyser le code source et générer un document d'analyse.
 
 ---
 
@@ -111,4 +103,4 @@ Aucune dépendance importante détectée.
 
 ## Recommandations
 
-Aucune recommandation spécifique détectée.
+- {'type': "absence de gestion d'erreur", 'description': "L'endpoint /api/analyze ne gère pas les erreurs de manière efficace."}
