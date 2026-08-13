@@ -1,12 +1,12 @@
 # Project Documentation
 
-Générer des documents d'analyse pour les projets
+Générer des documents d'analyse à partir de données provenant de diverses sources
 
 ---
 
 ## Fonctionnement général
 
-Le flux réel fonctionne comme suit : une requête HTTP est envoyée à l'endpoint /api/analyze, qui appelle le service AnalyserService pour traiter la demande. Ce service utilise ensuite le module CodeAnalyzer pour analyser le code source du projet et générer un document d'analyse.
+Le projet utilise une architecture Flask pour gérer les requêtes HTTP et les interactions avec les bases de données. Les données sont traitées par l'AnalyserService, qui utilise des modèles Ollama pour analyser les documents texte.
 
 ---
 
@@ -22,33 +22,36 @@ Le flux réel fonctionne comme suit : une requête HTTP est envoyée à l'endpoi
 
 ## Modules principaux
 
-### CodeAnalyzer
-**Fichier :** `backend/services/analyzers/code_analyzer.py`
+### app
+**Fichier :** `backend/app/__init__.py`
 
-**Rôle :** Gère les appels HTTP vers Ollama et la validation du JSON retourné pour analyser le code source des projets.
+**Rôle :** Gère les appels HTTP vers Ollama et la validation du JSON retourné
 
-**Classes principales :** `CodeAnalyzer`, `Analysis`
-**Dépendances internes :** `Flask`, `requests`, `Ollama`
-### AnalyserService
-**Fichier :** `backend/services/analysis_service.py`
+**Classes principales :** `Flask`, `Config`
+**Dépendances internes :** `flask`, `python`
+**Routes exposées :** `/api/health`
+### analysis_routes
+**Fichier :** `backend/app/routes/analysis_routes.py`
 
-**Rôle :** Traite les demandes d'analyse et appelle le module CodeAnalyzer.
+**Rôle :** Gère les requêtes d'analyse et les interactions avec Ollama
 
-**Classes principales :** `Analysis`, `ProjectNotFoundError`
-**Dépendances internes :** `Flask`, `requests`
-### DocumentService
-**Fichier :** `backend/services/document_service.py`
+**Classes principales :** `Flask`, `db`
+**Dépendances internes :** `flask`, `db`
+**Routes exposées :** `/api/analyses/<int:analysis_id>`, `/api/analyses`
+### document_routes
+**Fichier :** `backend/app/routes/document_routes.py`
 
-**Rôle :** Gère la génération des documents d'analyse.
+**Rôle :** Gère les requêtes de document et les interactions avec la base de données
 
-**Classes principales :** `Document`, `DocumentationPipelineError`
-**Dépendances internes :** `Flask`, `requests`
+**Classes principales :** `Flask`, `db`
+**Dépendances internes :** `flask`, `db`
+**Routes exposées :** `/api/documents/<int:document_id>`
 
 ---
 
 ## Flux de données
 
-Les données de code source sont envoyées à l'endpoint /api/analyze, qui appelle le service AnalyserService pour traiter la demande. Ce service utilise ensuite le module CodeAnalyzer pour analyser le code source et générer un document d'analyse.
+Les données sont traitées par l'AnalyserService, qui utilise des modèles Ollama pour analyser les documents texte. Les résultats sont ensuite envoyés à la base de données pour stockage.
 
 ---
 
@@ -101,6 +104,58 @@ Aucune dépendance importante détectée.
 
 ---
 
+## Installation
+
+**Prérequis**
+
+- Python 3.11+
+
+**Installation backend**
+
+- pip install -r backend/requirements.txt
+- python backend/run.py
+
+**Installation frontend**
+
+- npm install
+- npm run start
+
+**Configuration**
+
+- .env.example
+
+**Services externes**
+
+- Ollama
+- base de données
+
+**Commandes de démarrage**
+
+- backend/run.py
+
+
+---
+
+## Usage
+
+**Démarrage de l'application**
+
+- python backend/run.py
+- npm run start
+
+**API principale**
+
+- /api/health
+- /api/analyses/<int:analysis_id>
+- /api/documents/<int:document_id>
+
+**Exemple d'utilisation**
+
+- python backend/app/routes/document_routes.py /api/documents/1
+
+
+---
+
 ## Recommandations
 
-- {'type': "absence de gestion d'erreur", 'description': "L'endpoint /api/analyze ne gère pas les erreurs de manière efficace."}
+Aucune recommandation spécifique détectée.
