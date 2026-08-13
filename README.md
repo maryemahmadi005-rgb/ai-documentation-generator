@@ -1,12 +1,12 @@
 # Project Documentation
 
-Générer des documents d'analyse à partir de données provenant de diverses sources
+Générer des documents d'analyse à partir de données provenant de diverses sources, en utilisant une plateforme web pour la collecte et le traitement des données.
 
 ---
 
 ## Fonctionnement général
 
-Le projet utilise une architecture Flask pour gérer les requêtes HTTP et les interactions avec les bases de données. Les données sont traitées par l'AnalyserService, qui utilise des modèles Ollama pour analyser les documents texte.
+Le flux opérationnel du projet consiste en la collecte des données via l'interface web, qui sont ensuite traitées par les services backend (Flask) avant d'être stockées dans une base de données. Les utilisateurs peuvent ensuite télécharger leurs documents d'analyse et les envoyer à l'application pour analyse. L'application utilise un modèle Ollama pour analyser les documents et générer des résultats.
 
 ---
 
@@ -22,36 +22,27 @@ Le projet utilise une architecture Flask pour gérer les requêtes HTTP et les i
 
 ## Modules principaux
 
-### app
+### Flask
 **Fichier :** `backend/app/__init__.py`
 
-**Rôle :** Gère les appels HTTP vers Ollama et la validation du JSON retourné
+**Rôle :** Service backend qui gère les appels HTTP vers l'interface web et la base de données.
 
 **Classes principales :** `Flask`, `Config`
-**Dépendances internes :** `flask`, `python`
+**Dépendances internes :** `Flask`, `Cors`, `JWT`, `Migrate`
 **Routes exposées :** `/api/health`
-### analysis_routes
-**Fichier :** `backend/app/routes/analysis_routes.py`
+### Frontend
+**Fichier :** `front2/src/App.jsx`
 
-**Rôle :** Gère les requêtes d'analyse et les interactions avec Ollama
+**Rôle :** Interface web qui collecte les données des utilisateurs et les envoie à l'application.
 
-**Classes principales :** `Flask`, `db`
-**Dépendances internes :** `flask`, `db`
-**Routes exposées :** `/api/analyses/<int:analysis_id>`, `/api/analyses`
-### document_routes
-**Fichier :** `backend/app/routes/document_routes.py`
-
-**Rôle :** Gère les requêtes de document et les interactions avec la base de données
-
-**Classes principales :** `Flask`, `db`
-**Dépendances internes :** `flask`, `db`
-**Routes exposées :** `/api/documents/<int:document_id>`
+**Classes principales :** `App`
+**Routes exposées :** `/api/analyses/<int:analysis_id>`
 
 ---
 
 ## Flux de données
 
-Les données sont traitées par l'AnalyserService, qui utilise des modèles Ollama pour analyser les documents texte. Les résultats sont ensuite envoyés à la base de données pour stockage.
+Flux de données : Frontend -> API Backend -> Base de données Ollama -> Résultats
 
 ---
 
@@ -120,18 +111,14 @@ Aucune dépendance importante détectée.
 - npm install
 - npm run start
 
-**Configuration**
-
-- .env.example
-
 **Services externes**
 
 - Ollama
-- base de données
+- Base de données
 
 **Commandes de démarrage**
 
-- backend/run.py
+- python backend/run.py
 
 
 ---
@@ -140,18 +127,20 @@ Aucune dépendance importante détectée.
 
 **Démarrage de l'application**
 
-- python backend/run.py
 - npm run start
 
 **API principale**
 
 - /api/health
 - /api/analyses/<int:analysis_id>
-- /api/documents/<int:document_id>
 
 **Exemple d'utilisation**
 
-- python backend/app/routes/document_routes.py /api/documents/1
+- curl -X GET 'http://localhost:5000/api/analyses/1'
+
+**Flux frontend/backend**
+
+- Frontend -> API Backend -> Service backend
 
 
 ---
