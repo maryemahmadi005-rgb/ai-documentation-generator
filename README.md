@@ -1,12 +1,12 @@
 # Project Documentation
 
-Générer des documents d'analyse à partir de données provenant de diverses sources, en utilisant une plateforme web pour la collecte et le traitement des données.
+Générer des documents de documentation automatiquement à partir d'un projet
 
 ---
 
 ## Fonctionnement général
 
-Le flux opérationnel du projet consiste en la collecte des données via l'interface web, qui sont ensuite traitées par les services backend (Flask) avant d'être stockées dans une base de données. Les utilisateurs peuvent ensuite télécharger leurs documents d'analyse et les envoyer à l'application pour analyse. L'application utilise un modèle Ollama pour analyser les documents et générer des résultats.
+Le projet utilise une architecture Flask pour gérer les requêtes HTTP et une base de données pour stocker les données. L'analyse de données est effectuée à l'aide de l'API d'analyse, qui utilise l'LLM Ollama pour analyser les documents.
 
 ---
 
@@ -25,24 +25,31 @@ Le flux opérationnel du projet consiste en la collecte des données via l'inter
 ### Flask
 **Fichier :** `backend/app/__init__.py`
 
-**Rôle :** Service backend qui gère les appels HTTP vers l'interface web et la base de données.
+**Rôle :** Gère les requêtes HTTP et la configuration de l'application
 
 **Classes principales :** `Flask`, `Config`
-**Dépendances internes :** `Flask`, `Cors`, `JWT`, `Migrate`
-**Routes exposées :** `/api/health`
-### Frontend
+**Dépendances internes :** `Flask`, `Cors`, `JWT`
+**Routes exposées :** `/api/health`, `/api/analyses/<int:analysis_id>`
+### React
 **Fichier :** `front2/src/App.jsx`
 
-**Rôle :** Interface web qui collecte les données des utilisateurs et les envoie à l'application.
+**Rôle :** Gère la interface utilisateur et la communication avec l'API backend
 
-**Classes principales :** `App`
-**Routes exposées :** `/api/analyses/<int:analysis_id>`
+**Classes principales :** `App`, `BrowserRouter`
+**Dépendances internes :** `React`, `Redux`
+### Ollama
+**Fichier :** `backend/app/models/analysis.py`
+
+**Rôle :** Effectue l'analyse de données à l'aide de l'LLM
+
+**Classes principales :** `Analysis`, `Ollama`
+**Dépendances internes :** `Flask`, `Ollama`
 
 ---
 
 ## Flux de données
 
-Flux de données : Frontend -> API Backend -> Base de données Ollama -> Résultats
+Les données sont transmises de l'API backend à l'API d'analyse via l'LLM Ollama. Les données sont ensuite stockées dans la base de données.
 
 ---
 
@@ -104,12 +111,14 @@ Aucune dépendance importante détectée.
 **Installation backend**
 
 - pip install -r backend/requirements.txt
-- python backend/run.py
 
 **Installation frontend**
 
 - npm install
-- npm run start
+
+**Configuration**
+
+- backend/app/config.py
 
 **Services externes**
 
@@ -118,7 +127,7 @@ Aucune dépendance importante détectée.
 
 **Commandes de démarrage**
 
-- python backend/run.py
+- backend/run.py
 
 
 ---
@@ -127,7 +136,7 @@ Aucune dépendance importante détectée.
 
 **Démarrage de l'application**
 
-- npm run start
+- backend/run.py
 
 **API principale**
 
@@ -136,11 +145,11 @@ Aucune dépendance importante détectée.
 
 **Exemple d'utilisation**
 
-- curl -X GET 'http://localhost:5000/api/analyses/1'
+- /api/analyze/history
 
 **Flux frontend/backend**
 
-- Frontend -> API Backend -> Service backend
+- Frontend app -> Backend API -> Ollama
 
 
 ---
